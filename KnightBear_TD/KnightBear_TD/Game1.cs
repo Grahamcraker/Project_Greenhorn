@@ -58,7 +58,7 @@ namespace KnightBear_TD
 
             // TODO: use this.Content to load your game content here
             device = graphics.GraphicsDevice;
-            backgroundTexture = Content.Load<Texture2D>("/Resources/Images/backgroundImage");
+            backgroundTexture = Content.Load<Texture2D>("backgroundImage");
             screenWidth = device.PresentationParameters.BackBufferWidth;
             screenHeight = device.PresentationParameters.BackBufferHeight;
         }
