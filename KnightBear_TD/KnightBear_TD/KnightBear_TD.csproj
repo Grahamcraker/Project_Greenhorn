@@ -61,13 +61,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icon.ico" />
-    <Content Include="Resources\Images\backgroundImage.png" />
+    <Content Include="Content\Resources\Images\backgroundImage.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\" />
-    <Folder Include="Entities\Nightmares\" />
-    <Folder Include="Entities\Player\" />
-    <Folder Include="Entities\Towers\" />
+    <Folder Include="Content\Entities\Nightmares\" />
+    <Folder Include="Content\Entities\Player\" />
+    <Folder Include="Content\Entities\Towers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

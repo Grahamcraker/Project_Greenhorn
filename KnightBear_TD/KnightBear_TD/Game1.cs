@@ -19,6 +19,8 @@ namespace KnightBear_TD
         GraphicsDevice device;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Texture2D backgroundTexture;
+        int screenWidth, screenHeight;
 
         public Game1()
             : base()
@@ -52,10 +54,13 @@ namespace KnightBear_TD
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
+            spriteBatch = new SpriteBatch(device);
 
             // TODO: use this.Content to load your game content here
             device = graphics.GraphicsDevice;
+            backgroundTexture = Content.Load<Texture2D>("/Resources/Images/backgroundImage");
+            screenWidth = device.PresentationParameters.BackBufferWidth;
+            screenHeight = device.PresentationParameters.BackBufferHeight;
         }
 
         /// <summary>
@@ -91,8 +96,16 @@ namespace KnightBear_TD
             device.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            spriteBatch.Begin();
+            DrawScenery();
+            spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        private void DrawScenery()
+        {
+            spriteBatch.Draw(backgroundTexture, new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
         }
     }
 }
