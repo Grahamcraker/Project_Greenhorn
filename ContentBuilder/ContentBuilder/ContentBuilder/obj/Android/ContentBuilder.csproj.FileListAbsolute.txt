@@ -1,0 +1,12 @@
+D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\backgroundImage.xnb
+D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\lime.xnb
+D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\IgnoreMe.dll
+D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\obj\Android\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\obj\Android\IgnoreMe.dll
+D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\aoeTowerIcon.xnb
+D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\basicTowerIcon.xnb
+D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\slowTowerIcon.xnb
+D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\lvl1Background.xnb
+D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\obj\Android\ContentBuilder.csprojResolveAssemblyReference.cache
+D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\lvl2Background.xnb
+D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\laser.xnb

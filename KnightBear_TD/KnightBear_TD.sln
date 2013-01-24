@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnightBear_TD", "KnightBear_TD\KnightBear_TD.csproj", "{616049CE-9F50-409E-8C26-AAF806EF7668}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnightBear_TD_WindowsDesktop", "KnightBear_TD_WindowsDesktop\KnightBear_TD_WindowsDesktop.csproj", "{BFF3F22B-6848-4B8D-B874-A65810183DA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{616049CE-9F50-409E-8C26-AAF806EF7668}.Debug|x86.ActiveCfg = Debug|x86
-		{616049CE-9F50-409E-8C26-AAF806EF7668}.Debug|x86.Build.0 = Debug|x86
-		{616049CE-9F50-409E-8C26-AAF806EF7668}.Release|x86.ActiveCfg = Release|x86
-		{616049CE-9F50-409E-8C26-AAF806EF7668}.Release|x86.Build.0 = Release|x86
+		{BFF3F22B-6848-4B8D-B874-A65810183DA7}.Debug|x86.ActiveCfg = Debug|x86
+		{BFF3F22B-6848-4B8D-B874-A65810183DA7}.Debug|x86.Build.0 = Debug|x86
+		{BFF3F22B-6848-4B8D-B874-A65810183DA7}.Release|x86.ActiveCfg = Release|x86
+		{BFF3F22B-6848-4B8D-B874-A65810183DA7}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
