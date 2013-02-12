@@ -71,7 +71,7 @@ namespace KnightBear_TD_WindowsDesktop
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            currentLevel = new Level(Services, XmlLoader.GenerateLevelConfig(1));
+            currentLevel = new Level(Services, XmlLoader.GenerateLevelConfig(1), screenWidth, screenHeight);
         }
 
         /// <summary>
@@ -98,14 +98,14 @@ namespace KnightBear_TD_WindowsDesktop
 
             if (isNewLevel)
             {
-                currentLevel = new Level(Services, XmlLoader.GenerateLevelConfig(levelIndex));
+                currentLevel = new Level(Services, XmlLoader.GenerateLevelConfig(levelIndex), screenWidth, screenHeight);
                 isNewLevel = false;
 #if DEBUG
                 Console.WriteLine("Changing to level: " + levelIndex);
 #endif
             }
 
-            currentLevel.Update(gameTime, Keyboard.GetState(), Mouse.GetState());
+            currentLevel.Update(gameTime, Keyboard.GetState(), Mouse.GetState(), screenWidth, screenHeight);
 
             base.Update(gameTime);
         }

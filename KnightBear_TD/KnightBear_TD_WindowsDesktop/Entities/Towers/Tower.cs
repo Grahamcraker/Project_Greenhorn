@@ -48,11 +48,15 @@ namespace KnightBear_TD_WindowsDesktop.Entities.Towers
         #endregion
 
         #region Load/Update
-        public Tower(Vector2 position, Texture2D texture, float scale)
+        public Tower(Vector2 position, Texture2D texture, float scale, int range, Ability attack)
         {
             Position = position;
             EntityTexture = texture;
             Scale = scale;
+            Range = range;
+            Attack = attack;
+            targetIndex = -1;
+            CanAttack = true;
         }
 
         public void Update(GameTime time)

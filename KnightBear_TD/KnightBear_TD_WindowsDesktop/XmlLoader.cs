@@ -37,6 +37,7 @@ namespace KnightBear_TD_WindowsDesktop
             textures.Add("NONBUILD", baseNode.SelectSingleNode("nonbuild/texture").InnerText);
             textures.Add("BUILD", baseNode.SelectSingleNode("build/texture").InnerText);
             textures.Add("PATH", baseNode.SelectSingleNode("path/texture").InnerText);
+            
 
 
             config = new LevelConfig(

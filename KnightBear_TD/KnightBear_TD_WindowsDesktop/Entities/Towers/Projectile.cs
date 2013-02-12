@@ -11,16 +11,31 @@ namespace KnightBear_TD_WindowsDesktop.Entities.Towers
     class Projectile : Entity
     {
         #region Member Variables
-        private Ability ability;
+        private Ability projectileAbility;
+        private bool canMove;
+        private double lastMove;
         private int targetIndex;
         #endregion
 
         #region Properties
         public Ability ProjectileAbility
         {
-            get { return ability; }
-            set { ability = value; }
+            get { return projectileAbility; }
+            set { projectileAbility = value; }
         }
+
+        public bool CanMove
+        {
+            get { return canMove; }
+            set { canMove = value; }
+        }
+
+        public double LastMove
+        {
+            get { return lastMove; }
+            set { lastMove = value; }
+        }
+
         public int TargetIndex
         {
             get { return targetIndex; }
@@ -29,16 +44,22 @@ namespace KnightBear_TD_WindowsDesktop.Entities.Towers
         #endregion
 
         #region Load/Update
-        public Projectile(Texture2D texture, Vector2 position, float scale)
+        public Projectile(Texture2D texture, Vector2 position, float scale, int targetIndex, Ability projectileAbility)
         {
             EntityTexture = texture;
             Position = position;
+            TargetIndex = targetIndex;
             Scale = scale;
+            ProjectileAbility = projectileAbility;
         }
 
-        public void Update(Vector2 targetPosition)
+        public void Update(GameTime gameTime, Vector2 targetPosition)
         {
-            UpdatePosition(targetPosition);
+            if (gameTime.TotalGameTime.TotalMilliseconds - lastMove > projectileAbility.MoveSpeed)
+            {
+                canMove = true;
+                UpdatePosition(targetPosition);
+            }
         }
         #endregion
 

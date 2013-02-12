@@ -14,8 +14,8 @@ namespace KnightBear_TD_WindowsDesktop.Levels
 {
     struct LevelConfig
     {
-        public int NodeWidth { get; set; }
         public int NodeHeight { get; set; }
+        public int NodeWidth { get; set; }
         public float NodeScale { get; set; }
         public int HorizontalNodeCount { get; set; }
         public int VerticalNodeCount { get; set; }
@@ -39,23 +39,24 @@ namespace KnightBear_TD_WindowsDesktop.Levels
     {
         #region Constants
         private readonly Vector2 NoCollision = new Vector2(-1, -1);
-        private readonly float NoTarget = -1;
+        private readonly int NoTarget = -1;
         #endregion
 
         #region Member Variables
         private bool canPlaceTower;
         private ContentManager content;
+        private Dictionary<string, Texture2D> textures;
         private List<MapNode> mapNodes;
         private List<Nightmare> nightmares;
         private List<Tower> towers;
         private List<Projectile> projectiles;
         private LevelConfig config;
         private Player player;
-        private Dictionary<string, Texture2D> textures;
+        private Vector2 nodeCenter;
         #endregion
 
         #region Load
-        public Level(IServiceProvider service, LevelConfig config)
+        public Level(IServiceProvider service, LevelConfig config, int screenWidth, int screenHeight)
         {
             player = new Player();
             mapNodes = new List<MapNode>();
@@ -65,6 +66,9 @@ namespace KnightBear_TD_WindowsDesktop.Levels
             textures = new Dictionary<string,Texture2D>();
             content = new ContentManager(service, "../../../../../Content");
             this.config = config;
+            this.config.NodeWidth = screenWidth / config.HorizontalNodeCount;
+            this.config.NodeHeight = screenHeight / config.VerticalNodeCount;
+            nodeCenter = new Vector2(this.config.NodeWidth / 2, this.config.NodeHeight / 2);
             LoadTextures();
             InitNodes();
             InitNightmares();
@@ -97,6 +101,21 @@ namespace KnightBear_TD_WindowsDesktop.Levels
             {
                 mapNodes[id].Type = NodeType.NIGHTMAREPATH;
                 mapNodes[id].NodeTexture = textures["PATH"];
+            }
+
+            MapNode currentNode;
+            int index = 0;
+
+            for (var v = 0; v < config.VerticalNodeCount; v++)
+            {
+                for (var h = 0; h < config.HorizontalNodeCount; h++)
+                {
+                    currentNode = mapNodes[index];
+                    currentNode.Position = new Vector2(h * config.NodeWidth, v * config.NodeHeight);
+                    currentNode.Origin = new Vector2(currentNode.NodeTexture.Width / 2, currentNode.NodeTexture.Height / 2);
+                    currentNode.Scale = (float)config.NodeWidth / currentNode.NodeTexture.Width;
+                    index++;
+                }
             }
         }
 
@@ -131,9 +150,9 @@ namespace KnightBear_TD_WindowsDesktop.Levels
                                 );
             }
 
-            foreach (Projectile p in projectiles)
+            foreach (Nightmare n in nightmares)
             {
-                spriteBatch.Draw(p.EntityTexture, p.Position, null, Color.White, p.Angle, p.Origin, p.Scale, SpriteEffects.None, 0);
+                spriteBatch.Draw(n.EntityTexture, n.Position, null, Color.White, n.Angle, n.Origin, n.Scale, SpriteEffects.None, 0);
             }
 
             foreach (Tower t in towers)
@@ -141,14 +160,16 @@ namespace KnightBear_TD_WindowsDesktop.Levels
                 spriteBatch.Draw(t.EntityTexture, t.Position, null, Color.White, t.Angle, t.Origin, t.Scale, SpriteEffects.None, 0);
             }
 
-            foreach (Nightmare n in nightmares)
+            foreach (Projectile p in projectiles)
             {
-                spriteBatch.Draw(n.EntityTexture, n.Position, null, Color.White, n.Angle, n.Origin, n.Scale, SpriteEffects.None, 0);
+                spriteBatch.Draw(p.EntityTexture, p.Position, null, Color.White, p.Angle, p.Origin, p.Scale, SpriteEffects.None, 0);
             }
         }
 
-        public void Update(GameTime gameTime, KeyboardState keyState, MouseState mouseState)
+        public void Update(GameTime gameTime, KeyboardState keyState, MouseState mouseState, int screenWidth, int screenHeight)
         {
+            config.NodeWidth = screenWidth / config.HorizontalNodeCount;
+            config.NodeHeight = screenHeight / config.VerticalNodeCount;
             ProcessInput(keyState, mouseState);
             UpdateEntities(gameTime);
             UpdatePlayer();
@@ -160,7 +181,11 @@ namespace KnightBear_TD_WindowsDesktop.Levels
             // Update projectiles
             foreach (Projectile p in projectiles)
             {
-                p.Update(nightmares[p.TargetIndex].Position);
+                if (p.CanMove)
+                {
+                    p.Update(gameTime, nightmares[p.TargetIndex].Position);
+                    p.CanMove = false;
+                }
             }
 
             // Update towers
@@ -168,30 +193,35 @@ namespace KnightBear_TD_WindowsDesktop.Levels
             {
                 tw.Update(gameTime);
 
-                // Tower has a target
-                if (tw.TargetIndex != NoTarget)
+                // Tower can attack and a target is within range
+                if (tw.CanAttack && CheckTarget(tw))
                 {
-                    // Tower can attack and target is within range
-                    if (tw.CanAttack && CheckTarget(tw))
-                    {
-                        tw.PerformAttack(gameTime);
-                        projectiles.Add(new Projectile(textures["PROJECTILE"], tw.Position, .02f));
-                    }
+                    tw.PerformAttack(gameTime);
+                    projectiles.Add(new Projectile(textures["PROJECTILE"], tw.Position, 1.0f, tw.TargetIndex, tw.Attack));
                 }
             }
 
             //Update Nightmares
-            foreach (Nightmare nm in nightmares)
+            for (int i = nightmares.Count - 1; i >= 0; i--)
             {
-                nm.Update(gameTime, mapNodes[nm.NodeIndex]);
+                Nightmare nm = nightmares[i];
+                Vector2 target = new Vector2(config.NodeWidth / 2, config.NodeHeight / 2) + mapNodes[nm.NodeIndex].Position;
+                nm.Update(gameTime, target);
 
                 if (nm.HasReachedNode)
                 {
                     // Check if the nightmare has reached the final node
                     if (nm.NodeIndex != config.PathNodes[config.PathNodes.Count - 1])
                     {
+                        Vector2 newTarget = mapNodes[config.PathNodes[config.PathNodes.IndexOf(nm.NodeIndex) + 1]].Position + nodeCenter;
+
                         nm.NodeIndex = config.PathNodes[config.PathNodes.IndexOf(nm.NodeIndex) + 1];
+                        nm.UpdateRotation(newTarget);
                         nm.HasReachedNode = false;
+                    }
+                    else
+                    {
+                        nightmares.Remove(nm);
                     }
                 }
             }
@@ -209,9 +239,12 @@ namespace KnightBear_TD_WindowsDesktop.Levels
         private void CheckCollisions()
         {
             Vector2 collisionPosition;
-            foreach (Projectile p in projectiles)
+            Nightmare nm;
+            Projectile p;
+            for (int index = projectiles.Count -1; index >=0; index--)
             {
-                Nightmare nm = nightmares[p.TargetIndex];
+                p = projectiles[index];
+                nm = nightmares[p.TargetIndex];
                 Color[,] pTexture = TextureToArray(p.EntityTexture);
                 Color[,] nTexture = TextureToArray(nm.EntityTexture);
 
@@ -238,7 +271,7 @@ namespace KnightBear_TD_WindowsDesktop.Levels
 
         /// <summary>
         /// Checks the following(in order):
-        /// 1)Is the nightmare in range
+        /// 1)Is a nightmare in range
         /// 2)Has the nightmare travelled farther than the current target
         /// </summary>
         /// <param name="tw"></param>
@@ -246,8 +279,8 @@ namespace KnightBear_TD_WindowsDesktop.Levels
         private bool CheckTarget(Tower tw)
         {
             Nightmare nm;
-            int targetNode = -1;
             bool isTargetSelected = false;
+
             for (int index = 0; index < nightmares.Count; index++)
             {
                 nm = nightmares[index];
@@ -255,11 +288,21 @@ namespace KnightBear_TD_WindowsDesktop.Levels
                 // The target is within range
                 if (Vector2.Distance(tw.Position, nm.Position) < tw.Range)
                 {
-                    // Further down the path than the current target
-                    if (nm.NodeIndex > targetNode)
+                    if (tw.TargetIndex == NoTarget)
                     {
                         tw.TargetIndex = index;
                         isTargetSelected = true;
+                    }
+                    // Further down the path than the current target
+                    else
+                    {
+                        int newTarget = config.PathNodes.IndexOf(nm.NodeIndex);
+                        int currentTarget = config.PathNodes.IndexOf(nightmares[tw.TargetIndex].NodeIndex);
+                        if (newTarget > currentTarget)
+                        {
+                            tw.TargetIndex = index;
+                            isTargetSelected = true;
+                        }
                     }
                 }
             }
@@ -267,10 +310,23 @@ namespace KnightBear_TD_WindowsDesktop.Levels
             return isTargetSelected;
         }
 
+        private void CreateNightmare()
+        {
+            MapNode startNode = mapNodes[config.PathNodes[0]];
+            int targetIndex = config.PathNodes[1];
+
+            Texture2D nmTexture = textures["NIGHTMARE"];
+            float scale = (float)(config.NodeWidth - 15) / nmTexture.Width;
+            Vector2 start = startNode.Position + nodeCenter; // TODO: Implement intelligent way of determining starting coordinates
+            Vector2 target = mapNodes[targetIndex].Position + nodeCenter;
+            nightmares.Add(new Nightmare(start, target, nmTexture, scale, targetIndex, 100));
+        }
+
         private void CreateTower(Vector2 position)
         {
-            float scale = textures["TOWER"].Width / config.NodeWidth;
-            towers.Add(new Tower(position, textures["TOWER"], scale));
+            float scale = (float)config.NodeWidth / textures["TOWER"].Width;
+            Ability attack = new Ability(60000, 10, 10000, AbilityType.BASIC, 0);
+            towers.Add(new Tower(position, textures["TOWER"], scale, 200, attack));
         }
 
         /// <summary>
@@ -323,54 +379,78 @@ namespace KnightBear_TD_WindowsDesktop.Levels
         private void ProcessCollision(Vector2 position, Projectile p)
         {
             // TODO: Implement explosions or other collision effects
+            // If the nightmare is dead
             if (nightmares[p.TargetIndex].DealDamage(p.ProjectileAbility))
             {
                 player.Wallet += nightmares[p.TargetIndex].CurrencyValue;
+                foreach (Tower t in towers)
+                {
+                    // All towers targeting this nightmare should reset their target
+                    if (t.TargetIndex == p.TargetIndex)
+                    {
+                        t.TargetIndex = NoTarget;
+                    }
+                }
+
+                // All projectiles targeting this nightmare should disappear
+                for (int index = projectiles.Count - 1; index >= 0; index++)
+                {
+                    if (projectiles[index].TargetIndex == p.TargetIndex)
+                    {
+                        projectiles.RemoveAt(index);
+                    }
+                }
+
                 nightmares.RemoveAt(p.TargetIndex);
             }
-
-            projectiles.Remove(p);
+            // Projectile has hit. Remove it
+            else
+            {
+                projectiles.Remove(p);
+            }
         }
 
         private void ProcessInput(KeyboardState keyState, MouseState mouseState)
         {
             if (keyState.IsKeyDown(Keys.N))
             {
-                float scale = textures["NIGHTMARE"].Width / (config.NodeWidth + 10);
-                MapNode node = mapNodes[config.PathNodes[0]];
-                Vector2 start = new Vector2(node.Position.X + config.NodeWidth / 2, node.Position.Y + config.NodeHeight / 2);
-                nightmares.Add(new Nightmare(start, textures["NIGHTMARE"], scale));
+                CreateNightmare();
             }
 
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
-                bool isPosAllowed = true;
-                Vector2 mousePos = new Vector2(mouseState.X, mouseState.Y);
-                Rectangle mouseRec = new Rectangle((int)mousePos.X, (int)mousePos.Y, 1, 1);
-                Rectangle nodeRec;
-                foreach(MapNode node in mapNodes)
+                if (canPlaceTower)
                 {
-                    nodeRec = new Rectangle((int)node.Position.X, (int)node.Position.Y, config.NodeWidth, config.NodeHeight);
-                    if (nodeRec.Intersects(mouseRec))
+                    bool isPosAllowed = true;
+                    Vector2 mousePos = new Vector2(mouseState.X, mouseState.Y);
+                    Rectangle mouseRec = new Rectangle((int)mousePos.X, (int)mousePos.Y, 1, 1);
+                    Rectangle nodeRec;
+                    foreach (MapNode node in mapNodes)
                     {
-                        foreach (Tower t in towers)
+                        nodeRec = new Rectangle((int)node.Position.X, (int)node.Position.Y, config.NodeWidth, config.NodeHeight);
+                        if (nodeRec.Intersects(mouseRec))
                         {
-                            // If a tower already exists on that node
-                            if (t.Position == mousePos)
+                            foreach (Tower t in towers)
                             {
-                                isPosAllowed = false;
-                                break;
+                                // If a tower already exists on that node
+                                if (t.Position == node.Position)
+                                {
+                                    isPosAllowed = false;
+                                    break;
+                                }
                             }
-                        }
 
-                        if (isPosAllowed)
-                        {
-                            CreateTower(mousePos);
+                            if (isPosAllowed)
+                            {
+                                CreateTower(node.Position);
+                            }
+
+                            break;
                         }
                     }
-                }
 
-                canPlaceTower = false;
+                    canPlaceTower = false;
+                }
             }
             else if (mouseState.LeftButton == ButtonState.Released)
             {

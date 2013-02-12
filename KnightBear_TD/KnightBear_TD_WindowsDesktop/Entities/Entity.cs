@@ -12,13 +12,15 @@ namespace KnightBear_TD_WindowsDesktop.Entities
     {
         public int Cooldown;
         public int Power;
+        public int MoveSpeed;
         public float SpecialPower;
         public AbilityType Type;
 
-        public Ability(int cooldown, int power, AbilityType type, float specialPower)
+        public Ability(int cooldown, int power, int moveSpeed, AbilityType type, float specialPower)
         {
             Cooldown = cooldown;
             Power = power;
+            MoveSpeed = moveSpeed;
             SpecialPower = specialPower;
             Type = type;
         }
@@ -82,8 +84,8 @@ namespace KnightBear_TD_WindowsDesktop.Entities
 
         public Vector2 Forward
         {
-            get { return Forward; }
-            set { Forward = value; }
+            get { return forward; }
+            set { forward = value; }
         }
 
         public Vector2 Origin

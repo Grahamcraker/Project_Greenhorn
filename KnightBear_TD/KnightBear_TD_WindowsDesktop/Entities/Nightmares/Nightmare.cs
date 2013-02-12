@@ -55,6 +55,7 @@ namespace KnightBear_TD_WindowsDesktop.Entities.Nightmares
         public int Health
         {
             get { return health; }
+            set { health = value; }
         }
 
         /// <summary>
@@ -78,23 +79,26 @@ namespace KnightBear_TD_WindowsDesktop.Entities.Nightmares
         #endregion
 
         #region Load/Update
-        public Nightmare(Vector2 position, Texture2D texture, float scale)
+        public Nightmare(Vector2 position, Vector2 target, Texture2D texture, float scale, int nodeIndex, int health)
         {
             Position = position;
             EntityTexture = texture;
+            Origin = new Vector2(texture.Width / 2, texture.Height / 2);
             Scale = scale;
+            NodeIndex = nodeIndex;
+            Health = health;
             hasReachedNode = false;
+            UpdateRotation(target);
         }
 
-        public void Update(GameTime gameTime, MapNode targetNode)
+        public void Update(GameTime gameTime, Vector2 currentTarget)
         {
             if (gameTime.TotalGameTime.TotalMilliseconds - lastMove > StandardMoveSpeed * moveSpeed)
             {
                 Position += Direction;
-                if (Position == targetNode.Position)
+                if (Position == currentTarget)
                 {
                     hasReachedNode = true;
-                    UpdateRotation(targetNode.Position);
                 }
             }
         }
@@ -105,7 +109,7 @@ namespace KnightBear_TD_WindowsDesktop.Entities.Nightmares
         /// Updates the nightmares direction and angle
         /// </summary>
         /// <param name="target"></param>
-        private void UpdateRotation(Vector2 target)
+        public void UpdateRotation(Vector2 target)
         {
             // Difference of x/y coordiantes between shot and target
             float diffX, diffY;
@@ -114,9 +118,9 @@ namespace KnightBear_TD_WindowsDesktop.Entities.Nightmares
             diffY = target.Y - Position.Y;
             Angle = (float)Math.Atan2(diffY, diffX);
 
-            Vector2 forward = new Vector2(1, 0);
+            Forward = new Vector2(1, 0);
             Matrix rotMatrix = Matrix.CreateRotationZ(Angle);
-            Direction = Vector2.Transform(forward, rotMatrix);
+            Direction = Vector2.Transform(Forward, rotMatrix);
         }
 
         /// <summary>

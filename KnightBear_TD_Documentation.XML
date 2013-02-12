@@ -146,7 +146,7 @@
         <member name="M:KnightBear_TD_WindowsDesktop.Levels.Level.CheckTarget(KnightBear_TD_WindowsDesktop.Entities.Towers.Tower)">
             <summary>
             Checks the following(in order):
-            1)Is the nightmare in range
+            1)Is a nightmare in range
             2)Has the nightmare travelled farther than the current target
             </summary>
             <param name="tw"></param>
