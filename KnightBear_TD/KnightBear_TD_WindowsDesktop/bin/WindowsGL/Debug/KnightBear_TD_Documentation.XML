@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KnightBear_TD_WindowsDesktop</name>
+    </assembly>
+    <members>
+        <member name="T:KnightBear_TD_WindowsDesktop.Entities.Entity">
+            <summary>
+            Base class all entities inherit from. Contains
+            animation and update methods.
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Interfaces.IHasTexture.Angle">
+            <summary>
+            The angle(Radians) at which the texture is drawn.
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Interfaces.IHasTexture.Scale">
+            <summary>
+            The scaling variable used to adjust texture to a proper size
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Interfaces.IHasTexture.Width">
+            <summary>
+            Width of the rectangle the texture is drawn to
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Interfaces.IHasTexture.Height">
+            <summary>
+            Height of the rectangle the texture is drawn to
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Interfaces.IHasTexture.Direction">
+            <summary>
+            The direction the texture will move, if it moves.
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Interfaces.IHasTexture.Forward">
+            <summary>
+            The direction the texture is facing by default.
+            Examples:
+            An "Up Arrow" texture would have (0,-1).
+            A "Down Arrow" texture would have (0,1). 
+            A "Right Arrow" texture would have (1,0).
+            A "Left Arrow" texture would have (-1,0).
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Interfaces.IHasTexture.Origin">
+            <summary>
+            The center point of the texture
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Interfaces.IHasTexture.Position">
+            <summary>
+            The current (x,y) coordinates of the texture
+            </summary>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.Entities.Nightmares.Nightmare.UpdateRotation(Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Updates the nightmares direction and angle
+            </summary>
+            <param name="target"></param>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.Entities.Nightmares.Nightmare.DealDamage(KnightBear_TD_WindowsDesktop.Entities.Ability)">
+            <summary>
+            Deals damage and applies special effects
+            </summary>
+            <param name="pAbility">Ability used against nightmare</param>
+            <returns>True = Nightmare was killed    False = Nightmare still lives</returns>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Nightmares.Nightmare.CurrencyValue">
+            <summary>
+            Amount of currency gained if nightmare is killed
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Nightmares.Nightmare.MoveSpeed">
+            <summary>
+            The speed multiplier at which the nightmare moves. Standard multiplier is 1
+            Ex.
+            Standard speed = 6 moves/second
+            Nightmare MoveSpeed = .5
+            Nightmare speed becomes 12 moves/second
+            </summary>
+        </member>
+        <member name="T:KnightBear_TD_WindowsDesktop.Entities.Player">
+            <summary>
+            Represents the player. The player is represented
+            on screen by the hero bear.
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Towers.Tower.TargetIndex">
+            <summary>
+            Index of the nightmare currently targeted.
+            -1 if tower has no target.
+            </summary>
+        </member>
+        <member name="T:KnightBear_TD_WindowsDesktop.KnightBearGame">
+            <summary>
+            This is the main type for the game
+            </summary>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.KnightBearGame.#ctor">
+            <summary>
+            Game begins here
+            </summary>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.KnightBearGame.Initialize">
+            <summary>
+            Allows the game to perform any initialization it needs to before starting to run.
+            This is where it can query for any required services and load any non-graphic
+            related content.  Calling base.Initialize will enumerate through any components
+            and initialize them as well.
+            </summary>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.KnightBearGame.LoadContent">
+            <summary>
+            LoadContent will be called once per game and is the place to load
+            all of your content.
+            </summary>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.KnightBearGame.UnloadContent">
+            <summary>
+            UnloadContent will be called once per game and is the place to unload
+            all content.
+            </summary>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.KnightBearGame.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Allows the game to run logic such as updating the world,
+            checking for collisions, gathering input, and playing audio.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.KnightBearGame.Draw(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            This is called when the game should draw itself.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.KnightBearGame.ProcessInput">
+            <summary>
+            Handles responses to user input
+            i.e. Keyboard, Mouse, Gamepad, Touch Events
+            </summary>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.Levels.Level.CheckTarget(KnightBear_TD_WindowsDesktop.Entities.Towers.Tower)">
+            <summary>
+            Checks the following(in order):
+            1)Is the nightmare in range
+            2)Has the nightmare travelled farther than the current target
+            </summary>
+            <param name="tw"></param>
+            <returns>True = A target has been selected    False = No target was selected</returns>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.Levels.Level.GetCollision(Microsoft.Xna.Framework.Color[0:,0:],Microsoft.Xna.Framework.Matrix,Microsoft.Xna.Framework.Color[0:,0:],Microsoft.Xna.Framework.Matrix)">
+            <summary>
+            Checks if a collision occurs between a projectile and a nightmare
+            </summary>
+            <param name="pTexture">Projectile Texture</param>
+            <param name="pMatrix">Projectile Matrix</param>
+            <param name="nTexture">Nightmare Texture</param>
+            <param name="nMatrix">Nightmare Matrix</param>
+            <returns>Coordinate of the collision.  (-1,-1) if no collision detected</returns>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.Levels.Level.TextureToArray(Microsoft.Xna.Framework.Graphics.Texture2D)">
+            <summary>
+            Converts a 2D Texture to a 2-dimensional array
+            </summary>
+            <param name="texture">Texture to be converted</param>
+            <returns>2D array of colors</returns>
+        </member>
+        <member name="T:KnightBear_TD_WindowsDesktop.Program">
+            <summary>
+            The main class.
+            </summary>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+    </members>
+</doc>

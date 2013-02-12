@@ -11,7 +11,7 @@ namespace KnightBear_TD_WindowsDesktop
     /// </summary>
     public static class Program
     {
-        private static MainGame game;
+        private static KnightBearGame game;
 
         /// <summary>
         /// The main entry point for the application.
@@ -19,7 +19,7 @@ namespace KnightBear_TD_WindowsDesktop
         [STAThread]
         static void Main()
         {
-            game = new MainGame();
+            game = new KnightBearGame();
             game.Run();
         }
     }

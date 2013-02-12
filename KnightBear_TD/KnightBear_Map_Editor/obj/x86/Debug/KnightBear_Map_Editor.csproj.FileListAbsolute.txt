@@ -1,0 +1,10 @@
+D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_Map_Editor\obj\x86\Debug\KnightBear_Map_Editor.csprojResolveAssemblyReference.cache
+D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_Map_Editor\bin\WindowsGL\Debug\SDL.dll
+D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_Map_Editor\bin\WindowsGL\Debug\KnightBear_Map_Editor.exe
+D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_Map_Editor\bin\WindowsGL\Debug\KnightBear_Map_Editor.pdb
+D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_Map_Editor\bin\WindowsGL\Debug\Lidgren.Network.dll
+D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_Map_Editor\bin\WindowsGL\Debug\MonoGame.Framework.dll
+D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_Map_Editor\bin\WindowsGL\Debug\OpenTK.dll
+D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_Map_Editor\bin\WindowsGL\Debug\Tao.Sdl.dll
+D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_Map_Editor\obj\x86\Debug\KnightBear_Map_Editor.exe
+D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_Map_Editor\obj\x86\Debug\KnightBear_Map_Editor.pdb

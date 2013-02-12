@@ -48,55 +48,110 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\res\Images\Original\aoeTowerIcon.png">
-      <Link>aoeTowerIcon.png</Link>
+    <Compile Include="C:\Users\Anthony\Downloads\background.jpg">
+      <Link>XNATutorial\background.jpg</Link>
+      <Name>background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="C:\Users\Anthony\Downloads\cannon.png">
+      <Link>XNATutorial\cannon.png</Link>
+      <Name>cannon</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="C:\Users\Anthony\Downloads\carriage.png">
+      <Link>XNATutorial\carriage.png</Link>
+      <Name>carriage</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="C:\Users\Anthony\Downloads\foreground.png">
+      <Link>XNATutorial\foreground.png</Link>
+      <Name>foreground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="XNATutorial\myFont.spritefont">
+      <Name>myFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="C:\Users\Anthony\Downloads\rocket.png">
+      <Link>XNATutorial\rocket.png</Link>
+      <Name>rocket</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Content\Images\Original\aoeTowerIcon.png">
+      <Link>KnightBear\aoeTowerIcon.png</Link>
       <Name>aoeTowerIcon</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="..\..\..\res\Images\Original\backgroundImage.png">
-      <Link>backgroundImage.png</Link>
+    <Compile Include="..\..\..\Content\Images\Original\backgroundImage.png">
+      <Link>KnightBear\backgroundImage.png</Link>
       <Name>backgroundImage</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="..\..\..\res\Images\Original\basicTowerIcon.png">
-      <Link>basicTowerIcon.png</Link>
+    <Compile Include="..\..\..\Content\Images\Original\basicTowerIcon.png">
+      <Link>KnightBear\basicTowerIcon.png</Link>
       <Name>basicTowerIcon</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="..\..\..\res\Images\Original\lime.jpg">
-      <Link>lime.jpg</Link>
-      <Name>lime</Name>
+    <Compile Include="..\..\..\Content\Images\Original\bgBuildable.png">
+      <Link>KnightBear\bgBuildable.png</Link>
+      <Name>bgBuildable</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="..\..\..\res\Images\Original\slowTowerIcon.png">
-      <Link>slowTowerIcon.png</Link>
-      <Name>slowTowerIcon</Name>
+    <Compile Include="..\..\..\Content\Images\Original\bgNightmarePath.png">
+      <Link>KnightBear\bgNightmarePath.png</Link>
+      <Name>bgNightmarePath</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="..\..\..\res\Images\Original\lvl1Background.png">
-      <Link>lvl1Background.png</Link>
-      <Name>lvl1Background</Name>
+    <Compile Include="..\..\..\Content\Images\Original\bgNonBuildable.png">
+      <Link>KnightBear\bgNonBuildable.png</Link>
+      <Name>bgNonBuildable</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="..\..\..\res\Images\Original\laser.png">
-      <Link>laser.png</Link>
+    <Compile Include="..\..\..\Content\Images\Original\laser.png">
+      <Link>KnightBear\laser.png</Link>
       <Name>laser</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="..\..\..\res\Images\Original\lvl2Background.png">
-      <Link>lvl2Background.png</Link>
+    <Compile Include="..\..\..\Content\Images\Original\lime.jpg">
+      <Link>KnightBear\lime.jpg</Link>
+      <Name>lime</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="..\..\..\Content\Images\Original\lvl1Background.png">
+      <Link>KnightBear\lvl1Background.png</Link>
+      <Name>lvl1Background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="..\..\..\Content\Images\Original\lvl2Background.png">
+      <Link>KnightBear\lvl2Background.png</Link>
       <Name>lvl2Background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="..\..\..\Content\Images\Original\slowTowerIcon.png">
+      <Link>KnightBear\slowTowerIcon.png</Link>
+      <Name>slowTowerIcon</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

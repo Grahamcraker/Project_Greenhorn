@@ -3,6 +3,12 @@
 	<!--Basic Tower-->
 	<tower>
 		<type>Basic</type>
+    <abilities>
+      <ability name="attack">
+        <power>2</power>
+        <cooldown>1</cooldown>
+      </ability>
+    </abilities>
 		<damage>2</damage>
 		<atk_spd>5</atk_spd>
 		<aoe_range>0</aoe_range>
