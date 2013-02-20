@@ -1,4 +1,9 @@
-﻿#region Using Statements
+﻿//-----------------------------------------------------------------------
+// <copyright file="Level.cs" company="Leim Productions">
+//     Copyright (c) Leim Productions Inc.  All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
@@ -11,7 +16,6 @@ using KnightBear_TD_WindowsDesktop.Entities;
 using KnightBear_TD_WindowsDesktop.Entities.Nightmares;
 using KnightBear_TD_WindowsDesktop.Entities.Towers;
 using KnightBear_TD_WindowsDesktop.Levels;
-#endregion
 
 namespace KnightBear_TD_WindowsDesktop
 {
@@ -24,10 +28,11 @@ namespace KnightBear_TD_WindowsDesktop
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        bool isNewLevel;
+        bool isNewLevel, isEditor;
         int screenWidth, screenHeight, levelIndex;
 
-        Level currentLevel;
+        Level level;
+        MapEditor editor;
 
         /// <summary>
         /// Game begins here
@@ -58,6 +63,7 @@ namespace KnightBear_TD_WindowsDesktop
             Window.Title = "KnightBear Tower Defense";
 
             isNewLevel = false;
+            levelIndex = 1;
 
             base.Initialize();
         }
@@ -71,7 +77,7 @@ namespace KnightBear_TD_WindowsDesktop
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            currentLevel = new Level(Services, XmlLoader.GenerateLevelConfig(1), screenWidth, screenHeight);
+            level = new Level(Services, XmlLoader.GenerateLevelConfig(1), screenWidth, screenHeight);
         }
 
         /// <summary>
@@ -98,14 +104,26 @@ namespace KnightBear_TD_WindowsDesktop
 
             if (isNewLevel)
             {
-                currentLevel = new Level(Services, XmlLoader.GenerateLevelConfig(levelIndex), screenWidth, screenHeight);
-                isNewLevel = false;
 #if DEBUG
                 Console.WriteLine("Changing to level: " + levelIndex);
 #endif
+                level = new Level(Services, XmlLoader.GenerateLevelConfig(levelIndex), screenWidth, screenHeight);
+                isNewLevel = false;
             }
 
-            currentLevel.Update(gameTime, Keyboard.GetState(), Mouse.GetState(), screenWidth, screenHeight);
+            if (isEditor)
+            {
+#if DEBUG
+                Console.WriteLine("Changing to Map Editor");
+#endif
+                editor = new MapEditor(Services, screenWidth, screenHeight);
+                isEditor = false;
+            }
+            else
+            {
+                level.Update(gameTime, Keyboard.GetState(), Mouse.GetState(), screenWidth, screenHeight);
+            }
+
 
             base.Update(gameTime);
         }
@@ -117,7 +135,7 @@ namespace KnightBear_TD_WindowsDesktop
         protected override void Draw(GameTime gameTime)
         {
             spriteBatch.Begin();
-            currentLevel.Draw(spriteBatch, screenWidth, screenHeight);
+            level.Draw(spriteBatch, screenWidth, screenHeight);
             spriteBatch.End();
 
             base.Draw(gameTime);
@@ -131,15 +149,14 @@ namespace KnightBear_TD_WindowsDesktop
         {
             KeyboardState keyState = Keyboard.GetState();
 
-            if (keyState.IsKeyDown(Keys.D1))
+            if (keyState.IsKeyDown(Keys.L))
             {
-                levelIndex = 1;
-                isNewLevel = true;
+                isEditor = false;
             }
-            if (keyState.IsKeyDown(Keys.D2))
+
+            if (keyState.IsKeyDown(Keys.E))
             {
-                levelIndex = 2;
-                isNewLevel = true;
+                isEditor = true;
             }
         }
     }

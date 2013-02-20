@@ -1,4 +1,10 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="Level.cs" company="Leim Productions">
+//     Copyright (c) Leim Productions Inc.  All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,29 +26,30 @@ namespace KnightBear_TD_WindowsDesktop
             LevelConfig config;
 
             doc.Load(levelConfigFile);
-            XmlNode baseNode = doc.SelectSingleNode(String.Format("/levels/level{0}/nodes", level));
+            XmlNode baseNode = doc.SelectSingleNode(String.Format("/levels/level{0}", level));
 
-            string[] list = baseNode.SelectSingleNode("build/ids").InnerText.Split(new char[] { ',' });
+            string[] list = baseNode.SelectSingleNode("nodes/build/ids").InnerText.Split(new char[] { ',' });
             foreach (string str in list)
             {
                 build.Add(Convert.ToInt32(str));
             }
 
-            list = baseNode.SelectSingleNode("path/ids").InnerText.Split(new char[] { ',' });
+            list = baseNode.SelectSingleNode("nodes/path/ids").InnerText.Split(new char[] { ',' });
             foreach (string str in list)
             {
                 path.Add(Convert.ToInt32(str));
             }
 
-            textures.Add("NONBUILD", baseNode.SelectSingleNode("nonbuild/texture").InnerText);
-            textures.Add("BUILD", baseNode.SelectSingleNode("build/texture").InnerText);
-            textures.Add("PATH", baseNode.SelectSingleNode("path/texture").InnerText);
+            textures.Add("NONBUILD", baseNode.SelectSingleNode("nodes/nonbuild/texture").InnerText);
+            textures.Add("BUILD", baseNode.SelectSingleNode("nodes/build/texture").InnerText);
+            textures.Add("PATH", baseNode.SelectSingleNode("nodes/path/texture").InnerText);
             
 
 
             config = new LevelConfig(
-                                      Convert.ToInt32(baseNode.SelectSingleNode("horizontalNodeCount").InnerText)
-                                    , Convert.ToInt32(baseNode.SelectSingleNode("verticalNodeCount").InnerText)
+                                      Convert.ToInt32(baseNode.SelectSingleNode("nodes/horizontalNodeCount").InnerText)
+                                    , Convert.ToInt32(baseNode.SelectSingleNode("nodes/verticalNodeCount").InnerText)
+                                    , Convert.ToInt32(baseNode.SelectSingleNode("walletStart").InnerText)
                                     , build
                                     , path
                                     , textures

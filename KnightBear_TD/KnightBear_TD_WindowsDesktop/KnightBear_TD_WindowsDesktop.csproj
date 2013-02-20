@@ -36,7 +36,8 @@
     <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\KnightBear_TD_Documentation.XML</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -52,15 +53,15 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Entities\Entity.cs" />
-    <Compile Include="Entities\Nightmares\Nightmare.cs" />
-    <Compile Include="Entities\Player\Player.cs" />
-    <Compile Include="Entities\Towers\Tower.cs" />
-    <Compile Include="Entities\Towers\Projectile.cs" />
-    <Compile Include="Interfaces\IHasTexture.cs" />
-    <Compile Include="Levels\MapNode.cs" />
+    <Compile Include="GameMode\Entities\Nightmares\Nightmare.cs" />
+    <Compile Include="GameMode\Entities\Player\Player.cs" />
+    <Compile Include="GameMode\Entities\Towers\Tower.cs" />
+    <Compile Include="GameMode\Entities\Towers\Projectile.cs" />
+    <Compile Include="GameMode\GameObject.cs" />
+    <Compile Include="GameMode\Levels\MapNode.cs" />
     <Compile Include="KnightBearGame.cs" />
-    <Compile Include="Levels\Level.cs" />
+    <Compile Include="GameMode\Levels\Level.cs" />
+    <Compile Include="MapEditorMode\MapEditor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XmlLoader.cs" />
@@ -86,10 +87,10 @@
       <Link>SDL.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Levels\Levels.xml">
+    <Content Include="GameMode\Levels\Levels.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Entities\Towers\Towers.xml">
+    <Content Include="GameMode\Entities\Towers\Towers.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Icon.ico" />

@@ -19,7 +19,6 @@ namespace KnightBear_Map_Editor
         GraphicsDeviceManager graphics;
         GraphicsDevice device;
         SpriteBatch spriteBatch;
-        Texture2D bgTexture;
 
         int screenWidth, screenHeight;
 
@@ -62,7 +61,6 @@ namespace KnightBear_Map_Editor
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            bgTexture = Content.Load<Texture2D>("images/converted/backgroundImage");
         }
 
         /// <summary>
@@ -100,7 +98,6 @@ namespace KnightBear_Map_Editor
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-            spriteBatch.Draw(bgTexture, new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
             spriteBatch.End();
 
             base.Draw(gameTime);
