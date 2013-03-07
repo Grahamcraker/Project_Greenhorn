@@ -1,5 +1,16 @@
 var searchData=
 [
-  ['image',['Image',['../class_knight_bear___map___editor_1_1_button.html#a72558a6e22a9f9ff34e26198c655aaa4',1,'KnightBear_Map_Editor::Button']]],
-  ['initialize',['Initialize',['../class_knight_bear___map___editor_1_1_map_editor.html#a77ece15f2495cfb02b0873354c09dcec',1,'KnightBear_Map_Editor.MapEditor.Initialize()'],['../class_knight_bear___t_d___windows_desktop_1_1_knight_bear_game.html#a41dce3ad93d22bf03a549a1aa526e844',1,'KnightBear_TD_WindowsDesktop.KnightBearGame.Initialize()']]]
+  ['initialize',['Initialize',['../class_knight_bear___t_d___windows_1_1_screen_manager.html#ab5bf5dfde4039009459ee5b26346acae',1,'KnightBear_TD_Windows::ScreenManager']]],
+  ['inputaction',['InputAction',['../class_knight_bear___t_d___windows_1_1_screens_1_1_input_action.html',1,'KnightBear_TD_Windows::Screens']]],
+  ['inputaction',['InputAction',['../class_knight_bear___t_d___windows_1_1_screens_1_1_input_action.html#ae52c17aaf2283626f801895a7eb631a9',1,'KnightBear_TD_Windows::Screens::InputAction']]],
+  ['inputaction_2ecs',['InputAction.cs',['../_input_action_8cs.html',1,'']]],
+  ['inputstate',['InputState',['../class_knight_bear___t_d___windows_1_1_input_state.html',1,'KnightBear_TD_Windows']]],
+  ['inputstate',['InputState',['../class_knight_bear___t_d___windows_1_1_input_state.html#ac2cd721c01c7c336a4ab2937dfc710ee',1,'KnightBear_TD_Windows::InputState']]],
+  ['inputstate_2ecs',['InputState.cs',['../_input_state_8cs.html',1,'']]],
+  ['isactive',['IsActive',['../class_knight_bear___t_d___windows_1_1_screens_1_1_base_screen.html#ade25d8ce2644b1eca91966d085abeba0',1,'KnightBear_TD_Windows::Screens::BaseScreen']]],
+  ['iskeypressed',['IsKeyPressed',['../class_knight_bear___t_d___windows_1_1_input_state.html#a0595a5e1f000848963cea5efc2a26352',1,'KnightBear_TD_Windows::InputState']]],
+  ['isleftmouseclicked',['IsLeftMouseClicked',['../class_knight_bear___t_d___windows_1_1_input_state.html#a668c12101a93b42bc155f4311a8ab345',1,'KnightBear_TD_Windows::InputState']]],
+  ['isnewkeypress',['IsNewKeyPress',['../class_knight_bear___t_d___windows_1_1_input_state.html#acef0d67490ab9f420a1cef13d81a91ae',1,'KnightBear_TD_Windows::InputState']]],
+  ['isnewleftmouseclick',['IsNewLeftMouseClick',['../class_knight_bear___t_d___windows_1_1_input_state.html#ad35c3bf7dbb65057fdac603792307800',1,'KnightBear_TD_Windows::InputState']]],
+  ['ispopup',['IsPopup',['../class_knight_bear___t_d___windows_1_1_screens_1_1_base_screen.html#a76601cb5a98b8458243ff6a9b24f5d51',1,'KnightBear_TD_Windows::Screens::BaseScreen']]]
 ];

@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KnightBear_TD_WindowsDesktop</name>
+    </assembly>
+    <members>
+        <member name="F:KnightBear_TD_WindowsDesktop.Entities.Nightmare.NightmarePosition">
+            <summary>
+            Position of the nightmare on the map(grid)
+            </summary>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.Entities.Nightmare.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Only constructor of nightmare object
+            </summary>
+            <param name="icon">Image used to display nightmare</param>
+            <param name="position">Location on the map(grid)</param>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.Entities.Nightmare.UpdatePosition(Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Updates the nightmare's location with the new coordinates
+            </summary>
+            <param name="newPosition">New coordinates for nightmare</param>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Nightmare.Height">
+            <summary>
+            Height of the nightmare image
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Nightmare.Scale">
+            <summary>
+            Used to determine how to scale the nightmare image when drawing
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Nightmare.Width">
+            <summary>
+            Width of the nightmare image
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Nightmare.AttackSpeed">
+            <summary>
+            Rate at which the nightmare can attack
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Nightmare.Damage">
+            <summary>
+            Amount of damage done with each attack
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Nightmare.LocationIndex">
+            <summary>
+            Index of the nightmare in the map path
+            TODO: This seems like a bad way to move the enemies. Is there another process that works better?
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Nightmare.Name">
+            <summary>
+            Name of the nightmare
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Nightmare.Icon">
+            <summary>
+            Image displayed for the nightmare
+            </summary>
+        </member>
+        <member name="F:KnightBear_TD_WindowsDesktop.Entities.Tower.lastShotTime">
+            <summary>
+            Game time the last shot was fired
+            </summary>
+        </member>
+        <member name="F:KnightBear_TD_WindowsDesktop.Entities.Tower.shotCooldown">
+            <summary>
+            Time before another shot can be created
+            </summary>
+        </member>
+        <member name="F:KnightBear_TD_WindowsDesktop.Entities.Tower.shotLimit">
+            <summary>
+            Maximum number of shots that can be taken
+            TODO: This should become obsolete when collisions are processed and shots will disappear
+            </summary>
+        </member>
+        <member name="F:KnightBear_TD_WindowsDesktop.Entities.Tower.shotDirection">
+            <summary>
+            Coordinate change that will move the shot towards the target
+            </summary>
+        </member>
+        <member name="F:KnightBear_TD_WindowsDesktop.Entities.Tower.TowerPosition">
+            <summary>
+            Location of the tower on the map (grid)
+            </summary>
+        </member>
+        <member name="F:KnightBear_TD_WindowsDesktop.Entities.Tower.ShotLocations">
+            <summary>
+            List containing shots that haven't collided with enemy
+            </summary>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.Entities.Tower.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Int32,System.Int32)">
+            <summary>
+            Only constructor for tower object
+            </summary>
+            <param name="towerIcon">Image used for displaying tower</param>
+            <param name="weaponIcon">Image used for displaying shots</param>
+            <param name="position">Position of tower on the map(grid)</param>
+            <param name="shotCooldown"></param>
+            <param name="range"></param>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.Entities.Tower.Fire(System.Double)">
+            <summary>
+            Creates a new shot if tower's cooldown time has passed
+            </summary>
+            <param name="currentMillis">Current game time in milliseconds</param>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.Entities.Tower.GetConfiguration">
+            <summary>
+            Gets tower configuration from towers XML document
+            </summary>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.Entities.Tower.UpdateShots(Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Updates the position of all shots 
+            </summary>
+            <param name="targetPosition">Position of the target</param>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Tower.Angle">
+            <summary>
+            The angle between the shot and enemy. Used to rotate image correctly
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Tower.Height">
+            <summary>
+            Height of the tower image
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Tower.Scale">
+            <summary>
+            Used to determine how to scale the tower image when drawing
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Tower.Width">
+            <summary>
+            Width of the tower image
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Tower.AttackSpeed">
+            <summary>
+            Rate at which the tower can attack
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Tower.Damage">
+            <summary>
+            Amount of damage done with each attack
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Tower.Range">
+            <summary>
+            Range in which the tower can shoot
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Tower.TargetIndex">
+            <summary>
+            Index of the nightmare being targeted
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Tower.Name">
+            <summary>
+            Name of the tower
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Tower.TowerIcon">
+            <summary>
+            Image displayed for the tower
+            </summary>
+        </member>
+        <member name="P:KnightBear_TD_WindowsDesktop.Entities.Tower.WeaponIcon">
+            <summary>
+            Image displayed for each shot fired by the tower
+            </summary>
+        </member>
+        <member name="T:KnightBear_TD_WindowsDesktop.MainGame">
+            <summary>
+            This is the main type for your game
+            </summary>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.MainGame.Initialize">
+            <summary>
+            Allows the game to perform any initialization it needs to before starting to run.
+            This is where it can query for any required services and load any non-graphic
+            related content.  Calling base.Initialize will enumerate through any components
+            and initialize them as well.
+            </summary>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.MainGame.LoadContent">
+            <summary>
+            LoadContent will be called once per game and is the place to load
+            all of your content.
+            </summary>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.MainGame.UnloadContent">
+            <summary>
+            UnloadContent will be called once per game and is the place to unload
+            all content.
+            </summary>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.MainGame.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Allows the game to run logic such as updating the world,
+            checking for collisions, gathering input, and playing audio.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.MainGame.Draw(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            This is called when the game should draw itself.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.MainGame.DrawEntities">
+            <summary>
+            Draws all entity graphics
+            </summary>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.MainGame.MoveNightmares">
+            <summary>
+            Processes updates to move nightmares down the path
+            </summary>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.MainGame.ProcessAttacks(System.Double)">
+            <summary>
+            Determines if towers have enemies in range and if they should fire.
+            The tower is responsible for determining if firing is allowed.
+            </summary>
+            <param name="currentMillis">Current game time in milliseconds</param>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.MainGame.ProcessKeyboard">
+            <summary>
+            Processes certain keys being pressed by the keyboard.
+            </summary>
+        </member>
+        <member name="T:KnightBear_TD_WindowsDesktop.Program">
+            <summary>
+            The main class.
+            </summary>
+        </member>
+        <member name="M:KnightBear_TD_WindowsDesktop.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['basic',['BASIC',['../namespace_knight_bear___t_d___windows_desktop_1_1_game_mode.html#affc8c809d0c5233a7494b849dfd64179ae4ac03f6c9f00665644e868dd1fb9f1e',1,'KnightBear_TD_WindowsDesktop::GameMode']]],
-  ['buildable',['BUILDABLE',['../namespace_knight_bear___t_d___windows_desktop_1_1_levels.html#a882d5232989a6b8a56b7225f5ab5f59cacf929af6b34366e303f51acfec4eb7be',1,'KnightBear_TD_WindowsDesktop::Levels']]]
+  ['basic',['Basic',['../namespace_knight_bear___t_d___windows_1_1_gameplay.html#a0b59ee1fdd8c556a3d7ad58a6ef73558a972e73b7a882d0802a4e3a16946a2f94',1,'KnightBear_TD_Windows::Gameplay']]],
+  ['buildable',['Buildable',['../namespace_knight_bear___t_d___windows_1_1_gameplay_1_1_levels.html#a3ce69a16440af64cebc01859a18c7bcfa4dd182eba99344e677d7d2af61ea753c',1,'KnightBear_TD_Windows::Gameplay::Levels']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cooldown',['Cooldown',['../struct_knight_bear___t_d___windows_desktop_1_1_game_mode_1_1_ability.html#a800c18123c5ca8cf9feb181594ab7910',1,'KnightBear_TD_WindowsDesktop::GameMode::Ability']]]
+  ['cooldown',['Cooldown',['../struct_knight_bear___t_d___windows_1_1_gameplay_1_1_ability.html#a0ea2c6ff6f773510012b110d144580d0',1,'KnightBear_TD_Windows::Gameplay::Ability']]]
 ];

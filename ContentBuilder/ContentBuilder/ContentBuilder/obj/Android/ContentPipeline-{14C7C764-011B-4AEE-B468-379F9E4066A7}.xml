@@ -57,102 +57,129 @@
     </Item>
     <Item>
       <Source>D:\Game Development\Project_Greenhorn\Content\Images\Original\aoeTowerIcon.png</Source>
-      <Name>KnightBear\aoeTowerIcon</Name>
+      <Name>KnightBear\Images\aoeTowerIcon</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\aoeTowerIcon.xnb</Output>
+      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\Images\aoeTowerIcon.xnb</Output>
       <Time>2013-01-22T16:34:28.9223413-05:00</Time>
     </Item>
     <Item>
       <Source>D:\Game Development\Project_Greenhorn\Content\Images\Original\backgroundImage.png</Source>
-      <Name>KnightBear\backgroundImage</Name>
+      <Name>KnightBear\Images\backgroundImage</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\backgroundImage.xnb</Output>
+      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\Images\backgroundImage.xnb</Output>
       <Time>2013-01-22T10:19:48.9248123-05:00</Time>
     </Item>
     <Item>
       <Source>D:\Game Development\Project_Greenhorn\Content\Images\Original\basicTowerIcon.png</Source>
-      <Name>KnightBear\basicTowerIcon</Name>
+      <Name>KnightBear\Images\basicTowerIcon</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\basicTowerIcon.xnb</Output>
+      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\Images\basicTowerIcon.xnb</Output>
       <Time>2013-01-22T16:36:05.0908418-05:00</Time>
     </Item>
     <Item>
       <Source>D:\Game Development\Project_Greenhorn\Content\Images\Original\bgBuildable.png</Source>
-      <Name>KnightBear\bgBuildable</Name>
+      <Name>KnightBear\Images\bgBuildable</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\bgBuildable.xnb</Output>
+      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\Images\bgBuildable.xnb</Output>
       <Time>2013-02-07T09:47:03.8404098-05:00</Time>
     </Item>
     <Item>
       <Source>D:\Game Development\Project_Greenhorn\Content\Images\Original\bgNightmarePath.png</Source>
-      <Name>KnightBear\bgNightmarePath</Name>
+      <Name>KnightBear\Images\bgNightmarePath</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\bgNightmarePath.xnb</Output>
+      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\Images\bgNightmarePath.xnb</Output>
       <Time>2013-02-07T09:46:49.4173668-05:00</Time>
     </Item>
     <Item>
       <Source>D:\Game Development\Project_Greenhorn\Content\Images\Original\bgNonBuildable.png</Source>
-      <Name>KnightBear\bgNonBuildable</Name>
+      <Name>KnightBear\Images\bgNonBuildable</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\bgNonBuildable.xnb</Output>
+      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\Images\bgNonBuildable.xnb</Output>
       <Time>2013-02-07T09:47:17.1994552-05:00</Time>
     </Item>
     <Item>
       <Source>D:\Game Development\Project_Greenhorn\Content\Images\Original\laser.png</Source>
-      <Name>KnightBear\laser</Name>
+      <Name>KnightBear\Images\laser</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\laser.xnb</Output>
+      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\Images\laser.xnb</Output>
       <Time>2013-01-24T13:47:42.6781618-05:00</Time>
     </Item>
     <Item>
       <Source>D:\Game Development\Project_Greenhorn\Content\Images\Original\lime.jpg</Source>
-      <Name>KnightBear\lime</Name>
+      <Name>KnightBear\Images\lime</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\lime.xnb</Output>
+      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\Images\lime.xnb</Output>
       <Time>2013-01-22T14:38:48.1212225-05:00</Time>
     </Item>
     <Item>
       <Source>D:\Game Development\Project_Greenhorn\Content\Images\Original\lvl1Background.png</Source>
-      <Name>KnightBear\lvl1Background</Name>
+      <Name>KnightBear\Images\lvl1Background</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\lvl1Background.xnb</Output>
+      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\Images\lvl1Background.xnb</Output>
       <Time>2013-01-23T08:20:56.6083029-05:00</Time>
     </Item>
     <Item>
       <Source>D:\Game Development\Project_Greenhorn\Content\Images\Original\lvl2Background.png</Source>
-      <Name>KnightBear\lvl2Background</Name>
+      <Name>KnightBear\Images\lvl2Background</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\lvl2Background.xnb</Output>
+      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\Images\lvl2Background.xnb</Output>
       <Time>2013-01-24T13:06:38.1739533-05:00</Time>
     </Item>
     <Item>
       <Source>D:\Game Development\Project_Greenhorn\Content\Images\Original\slowTowerIcon.png</Source>
-      <Name>KnightBear\slowTowerIcon</Name>
+      <Name>KnightBear\Images\slowTowerIcon</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\slowTowerIcon.xnb</Output>
+      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\Images\slowTowerIcon.xnb</Output>
       <Time>2013-01-22T16:35:33.2230191-05:00</Time>
+    </Item>
+    <Item>
+      <Source>KnightBear\Fonts\buttonFont.spritefont</Source>
+      <Name>KnightBear\Fonts\buttonFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\Fonts\buttonFont.xnb</Output>
+      <Time>2013-02-21T12:54:08.0269207-05:00</Time>
+    </Item>
+    <Item>
+      <Source>KnightBear\Fonts\headerFont.spritefont</Source>
+      <Name>KnightBear\Fonts\headerFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\Fonts\headerFont.xnb</Output>
+      <Time>2013-02-21T13:13:39.8039425-05:00</Time>
+    </Item>
+    <Item>
+      <Source>KnightBear\Fonts\menuFont.spritefont</Source>
+      <Name>KnightBear\Fonts\menuFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Game Development\Project_Greenhorn\ContentBuilder\ContentBuilder\ContentBuilder\bin\Android\Content\KnightBear\Fonts\menuFont.xnb</Output>
+      <Time>2013-03-05T16:38:59.5594739-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

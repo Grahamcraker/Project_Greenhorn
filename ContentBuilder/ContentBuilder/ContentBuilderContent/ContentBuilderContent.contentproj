@@ -90,70 +90,92 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\..\Content\Images\Original\aoeTowerIcon.png">
-      <Link>KnightBear\aoeTowerIcon.png</Link>
+      <Link>KnightBear\Images\aoeTowerIcon.png</Link>
       <Name>aoeTowerIcon</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="..\..\..\Content\Images\Original\backgroundImage.png">
-      <Link>KnightBear\backgroundImage.png</Link>
+      <Link>KnightBear\Images\backgroundImage.png</Link>
       <Name>backgroundImage</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="..\..\..\Content\Images\Original\basicTowerIcon.png">
-      <Link>KnightBear\basicTowerIcon.png</Link>
+      <Link>KnightBear\Images\basicTowerIcon.png</Link>
       <Name>basicTowerIcon</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="..\..\..\Content\Images\Original\bgBuildable.png">
-      <Link>KnightBear\bgBuildable.png</Link>
+      <Link>KnightBear\Images\bgBuildable.png</Link>
       <Name>bgBuildable</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="..\..\..\Content\Images\Original\bgNightmarePath.png">
-      <Link>KnightBear\bgNightmarePath.png</Link>
+      <Link>KnightBear\Images\bgNightmarePath.png</Link>
       <Name>bgNightmarePath</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="..\..\..\Content\Images\Original\bgNonBuildable.png">
-      <Link>KnightBear\bgNonBuildable.png</Link>
+      <Link>KnightBear\Images\bgNonBuildable.png</Link>
       <Name>bgNonBuildable</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="..\..\..\Content\Images\Original\laser.png">
-      <Link>KnightBear\laser.png</Link>
+      <Link>KnightBear\Images\laser.png</Link>
       <Name>laser</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="..\..\..\Content\Images\Original\lime.jpg">
-      <Link>KnightBear\lime.jpg</Link>
+      <Link>KnightBear\Images\lime.jpg</Link>
       <Name>lime</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="..\..\..\Content\Images\Original\lvl1Background.png">
-      <Link>KnightBear\lvl1Background.png</Link>
+      <Link>KnightBear\Images\lvl1Background.png</Link>
       <Name>lvl1Background</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="..\..\..\Content\Images\Original\lvl2Background.png">
-      <Link>KnightBear\lvl2Background.png</Link>
+      <Link>KnightBear\Images\lvl2Background.png</Link>
       <Name>lvl2Background</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="..\..\..\Content\Images\Original\slowTowerIcon.png">
-      <Link>KnightBear\slowTowerIcon.png</Link>
+      <Link>KnightBear\Images\slowTowerIcon.png</Link>
       <Name>slowTowerIcon</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="KnightBear\Fonts\buttonFont.spritefont">
+      <Name>buttonFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="KnightBear\Fonts\headerFont.spritefont">
+      <Name>headerFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <SubType>Designer</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="KnightBear\Fonts\menuFont.spritefont">
+      <Name>menuFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

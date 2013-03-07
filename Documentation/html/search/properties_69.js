@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['image',['Image',['../class_knight_bear___map___editor_1_1_button.html#a72558a6e22a9f9ff34e26198c655aaa4',1,'KnightBear_Map_Editor::Button']]]
+  ['isactive',['IsActive',['../class_knight_bear___t_d___windows_1_1_screens_1_1_base_screen.html#ade25d8ce2644b1eca91966d085abeba0',1,'KnightBear_TD_Windows::Screens::BaseScreen']]],
+  ['ispopup',['IsPopup',['../class_knight_bear___t_d___windows_1_1_screens_1_1_base_screen.html#a76601cb5a98b8458243ff6a9b24f5d51',1,'KnightBear_TD_Windows::Screens::BaseScreen']]]
 ];

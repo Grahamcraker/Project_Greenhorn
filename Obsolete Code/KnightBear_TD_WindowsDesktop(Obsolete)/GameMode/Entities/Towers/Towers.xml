@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<towers>
+	<!--Basic Tower-->
+	<tower>
+		<type>Basic</type>
+    <abilities>
+      <ability name="attack">
+        <power>2</power>
+        <cooldown>1</cooldown>
+      </ability>
+    </abilities>
+		<damage>2</damage>
+		<atk_spd>5</atk_spd>
+		<aoe_range>0</aoe_range>
+	</tower>
+	<!--AOE Tower-->
+	<tower>
+		<type>AOE</type>
+		<damage>5</damage>
+		<atk_spd>2</atk_spd>
+		<aoe_range>1</aoe_range>
+	</tower>
+	<!--Slow Tower-->
+	<tower>
+		<type>Slow</type>
+		<damage>2</damage>
+		<atk_spd>5</atk_spd>
+		<aoe_range>0</aoe_range>
+	</tower>
+	<!--High DPS Tower-->
+	<tower>
+		<type>HighDPS</type>
+		<damage>2</damage>
+		<atk_spd>5</atk_spd>
+		<aoe_range>0</aoe_range>
+	</tower>
+</towers>

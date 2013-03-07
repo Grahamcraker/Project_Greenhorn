@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type',['Type',['../struct_knight_bear___t_d___windows_desktop_1_1_game_mode_1_1_ability.html#ab66f0de253698a765b57281ef0f85344',1,'KnightBear_TD_WindowsDesktop::GameMode::Ability']]]
+  ['type',['Type',['../struct_knight_bear___t_d___windows_1_1_gameplay_1_1_ability.html#adfd1e01d84fde1860a24cadc494e7ec6',1,'KnightBear_TD_Windows::Gameplay::Ability']]]
 ];
