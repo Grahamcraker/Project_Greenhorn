@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace KnightBear_TD_Windows.Gameplay.Entities.Player
 {
@@ -16,7 +17,7 @@ namespace KnightBear_TD_Windows.Gameplay.Entities.Player
     /// Represents the player. The player is visually
     /// seen as the hero bear on screen.
     /// </summary>
-    class Player : GameObject
+    class Player : Sprite
     {
         #region Fields
         private Ability attack;
@@ -26,24 +27,6 @@ namespace KnightBear_TD_Windows.Gameplay.Entities.Player
         #endregion
 
         #region Properties
-        public Ability Attack
-        {
-            get { return attack; }
-            set { attack = value; }
-        }
-
-        public Ability Defend
-        {
-            get { return defend; }
-            set { defend = value; }
-        }
-
-        public int Health
-        {
-            get { return health; }
-            set { health = value; }
-        }
-
         public int Wallet
         {
             get { return wallet; }
@@ -52,18 +35,10 @@ namespace KnightBear_TD_Windows.Gameplay.Entities.Player
         #endregion
 
         #region Load/Update
-        public Player(int health, int wallet, Ability attack, Ability defend, Vector2 position)
+        public Player(Texture2D texture, Vector2 position, int wallet)
+            : base(texture, position)
         {
-            Health = health;
-            Wallet = wallet;
-            Attack = attack;
-            Defend = defend;
-            Position = position;
-        }
-
-        public void Update()
-        {
-
+            this.wallet = wallet;
         }
         #endregion
     }

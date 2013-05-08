@@ -10,17 +10,18 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using KnightBear_TD_Windows.Gameplay.Entities.Nightmares;
 
 namespace KnightBear_TD_Windows.Gameplay.Entities.Towers
 {
-    public class Tower : GameObject
+    public class Tower : Sprite
     {
         #region Fields
         private Ability towerAbility;
         private bool canAttack;
         private double lastAttack;
-        private float range;
-        private int targetIndex;
+        private int range;
+        private Nightmare target;
         #endregion
 
         #region Properties
@@ -36,38 +37,32 @@ namespace KnightBear_TD_Windows.Gameplay.Entities.Towers
             set { canAttack = value; }
         }
 
-        public float Range
+        public int Range
         {
             get { return range; }
             set { range = value; }
         }
 
-        /// <summary>
-        /// Index of the nightmare currently targeted.
-        /// -1 if tower has no target.
-        /// </summary>
-        public int TargetIndex
+        public Nightmare Target
         {
-            get { return targetIndex; }
-            set { targetIndex = value; }
+            get { return target; }
+            set { target = value; }
         }
         #endregion
 
         #region Load/Update
-        public Tower(Vector2 position, Texture2D texture, float scale, int range, Ability attack)
+        public Tower(Texture2D texture, Vector2 position, int range, Ability attack)
+            : base(texture, position)
         {
-            Position = position;
-            ObjectTexture = texture;
-            Scale = scale;
             Range = range;
             TowerAbility = attack;
-            Origin = new Vector2(0, 0);
-            targetIndex = -1;
             CanAttack = true;
         }
 
-        public void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
+            base.Update(gameTime);
+
             if (gameTime.TotalGameTime.TotalMilliseconds - lastAttack > towerAbility.Cooldown)
             {
                 canAttack = true;

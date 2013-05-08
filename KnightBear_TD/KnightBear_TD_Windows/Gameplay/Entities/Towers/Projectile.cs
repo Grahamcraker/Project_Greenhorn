@@ -10,15 +10,16 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using KnightBear_TD_Windows.Gameplay.Entities.Nightmares;
 
 namespace KnightBear_TD_Windows.Gameplay.Entities.Towers
 {
-    class Projectile : GameObject
+    class Projectile : Sprite
     {
         #region Fields
         private Ability projectileAbility;
         private double lastMove;
-        private int targetIndex;
+        private Nightmare target;
         #endregion
 
         #region Properties
@@ -34,29 +35,27 @@ namespace KnightBear_TD_Windows.Gameplay.Entities.Towers
             set { lastMove = value; }
         }
 
-        public int TargetIndex
+        public Nightmare Target
         {
-            get { return targetIndex; }
-            set { targetIndex = value; }
+            get { return target; }
         }
         #endregion
 
         #region Load/Update
-        public Projectile(Texture2D texture, Vector2 position, float scale, int targetIndex, Ability projectileAbility)
+        public Projectile(Texture2D texture, Vector2 position, Nightmare target, Ability projectileAbility)
+            : base(texture, position)
         {
-            ObjectTexture = texture;
-            Position = position;
-            TargetIndex = targetIndex;
-            Scale = scale;
+            this.target = target;
             ProjectileAbility = projectileAbility;
-            Origin = new Vector2(texture.Width / 2, texture.Height / 2);
         }
 
-        public void Update(GameTime gameTime, Vector2 targetPosition)
+        public override void Update(GameTime gameTime)
         {
+            base.Update(gameTime);
+
             if (gameTime.TotalGameTime.TotalMilliseconds - lastMove > projectileAbility.MoveSpeed)
             {
-                UpdatePosition(targetPosition);
+                UpdatePosition(target.Center);
             }
         }
         #endregion
@@ -67,15 +66,15 @@ namespace KnightBear_TD_Windows.Gameplay.Entities.Towers
             // Difference of x/y coordiantes between shot and target
             float diffX, diffY;
 
-            diffX = target.X - Position.X;
-            diffY = target.Y - Position.Y;
-            Rotation = (float)Math.Atan2(diffY, diffX);
+            diffX = target.X - position.X;
+            diffY = target.Y - position.Y;
+            rotation = (float)Math.Atan2(diffY, diffX);
 
             Vector2 forward = new Vector2(1, 0);
-            Matrix rotMatrix = Matrix.CreateRotationZ(Rotation);
+            Matrix rotMatrix = Matrix.CreateRotationZ(rotation);
             Vector2 shotDirection = Vector2.Transform(forward, rotMatrix);
 
-            Position += shotDirection;
+            position += shotDirection;
         }
         #endregion
     }

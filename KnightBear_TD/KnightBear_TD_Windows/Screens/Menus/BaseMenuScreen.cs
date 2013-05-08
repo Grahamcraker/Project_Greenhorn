@@ -1,4 +1,10 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="BaseMenuScreen.cs" company="Leim Productions">
+//     Copyright (c) Leim Productions Inc.  All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +27,10 @@ namespace KnightBear_TD_Windows.Screens.Menus
         #endregion
 
         #region Properties
+        public int SelectedMenuItemIndex
+        {
+            get { return selectedMenuItemIndex; }
+        }
         public List<MenuItem> MenuItems
         {
             get { return menuItems; }

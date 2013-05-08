@@ -1,4 +1,10 @@
-﻿#region Using Statements
+﻿//-----------------------------------------------------------------------
+// <copyright file="KnightBearGame.cs" company="Leim Productions">
+//     Copyright (c) Leim Productions Inc.  All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+#region Using Statements
 using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
@@ -29,7 +35,7 @@ namespace KnightBear_TD_Windows
         {
             graphics = new GraphicsDeviceManager(this);
             // What is the root folder of our content?
-            Content.RootDirectory = @"../../../../../Content";
+            Content.RootDirectory = @"Content";
             
             // Create our ScreenManager and add it to the game's Components
             screenManager = new ScreenManager(this);

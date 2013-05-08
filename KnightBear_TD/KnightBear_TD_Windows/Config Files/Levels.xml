@@ -1,0 +1,18 @@
+﻿<?verticalNodeCountml version="1.0" encoding="utf-8" ?>
+<!--The number of nodes wide/high is independent of the actual width/height of the game window-->
+<levels>
+	<bonus>
+	</bonus>
+	<custom>
+	</custom>
+	<story>
+		<level number="1">
+			<buildable_texture>bgbuildable</buildable_texture>
+			<nonbuildable_texture>bgnonbuildable</nonbuildable_texture>
+			<path_texture>bgnightmarepath</path_texture>
+			<wallet_start_amount>250</wallet_start_amount>
+			<map>1,0,0,0,1;0,2,2,2,0;0,2,0,2,0;4,2,0,2,3;1,0,0,0,1</map>
+      <waypoints>0.3,1.3,1.2,1.1,2.1,3.1,3.2,3.3,4.3</waypoints>
+		</level>
+	</story>
+</levels>

@@ -1,4 +1,10 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="PreLevelScreen.cs" company="Leim Productions">
+//     Copyright (c) Leim Productions Inc.  All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,9 +13,6 @@ namespace KnightBear_TD_Windows.Screens.Menus
 {
     class PreLevelScreen : BaseMenuScreen
     {
-        #region Fields
-        XmlLoader loader;
-        #endregion
         public PreLevelScreen()
             : base("Select A Level")
         {
@@ -34,9 +37,9 @@ namespace KnightBear_TD_Windows.Screens.Menus
                 Manager.RemoveScreen(s);
             }
 
-            loader = XmlLoader.Loader;
+            XmlController control = XmlController.Controller;
             
-            Manager.AddScreen(new GameplayScreen(loader.GenerateLevelConfig(1)));
+            Manager.AddScreen(new GameplayScreen(control.LoadLevelConfig(1, LevelType.Story)));
         }
 
         void cancelMenuItem_Selected(object sender, EventArgs e)

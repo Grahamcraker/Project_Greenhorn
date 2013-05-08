@@ -1,4 +1,10 @@
-﻿#region Using Statements
+﻿//-----------------------------------------------------------------------
+// <copyright file="Program.cs" company="Leim Productions">
+//     Copyright (c) Leim Productions Inc.  All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+#region Using Statements
 using System;
 using System.Collections.Generic;
 using System.Linq;

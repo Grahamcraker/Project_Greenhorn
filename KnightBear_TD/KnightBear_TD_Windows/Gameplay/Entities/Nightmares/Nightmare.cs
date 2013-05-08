@@ -1,149 +1,125 @@
-﻿//-----------------------------------------------------------------------
-// <copyright file="Level.cs" company="Leim Productions">
-//     Copyright (c) Leim Productions Inc.  All rights reserved.
-// </copyright>
-//-----------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KnightBear_TD_Windows.Gameplay.Levels;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace KnightBear_TD_Windows.Gameplay.Entities.Nightmares
 {
-    class Nightmare : GameObject
+    public class Nightmare : Sprite
     {
-        #region Constants
-        private readonly int StandardMoveSpeed = 600;
-        #endregion
-
         #region Fields
-        private Ability nightmareAbility;
-        private bool hasReachedNode;
-        private double lastMove;
-        private int currencyValue;
-        private int health;
-        private int moveSpeed;
-        private int nodeIndex;
+        private bool isAlive;
+        private decimal healthPercent;
+        private float speed;
+        private int bounty;
+        private int currentHealth;
+        private int maxHealth;
+        private Queue<Vector2> waypoints;
         #endregion
 
         #region Properties
-        public Ability NightmareAbility
+        public bool IsAlive
         {
-            get { return nightmareAbility; }
-            set { nightmareAbility = value; }
-        }
-        
-        public bool HasReachedNode
-        {
-            get { return hasReachedNode; }
-            set { hasReachedNode = value; }
+            get { return isAlive; }
         }
 
-        public double LastMove
+        public float Health
         {
-            get { return lastMove;}
-            set { lastMove = value; }
+            get { return currentHealth; }
         }
 
-        /// <summary>
-        /// Amount of currency gained if nightmare is killed
-        /// </summary>
-        public int CurrencyValue
+        public int Bounty
         {
-            get { return currencyValue; }
-            set { currencyValue = value; }
+            get { return bounty; }
         }
 
-        public int Health
+        public int WaypointCount
         {
-            get { return health; }
-            set { health = value; }
-        }
-
-        /// <summary>
-        /// The speed multiplier at which the nightmare moves. Standard multiplier is 1
-        /// Ex.
-        /// Standard speed = 6 moves/second
-        /// Nightmare MoveSpeed = .5
-        /// Nightmare speed becomes 12 moves/second
-        /// </summary>
-        public int MoveSpeed
-        {
-            get { return moveSpeed; }
-            set { moveSpeed = value; }
-        }
-
-        public int NodeIndex
-        {
-            get { return nodeIndex; }
-            set { nodeIndex = value; }
+            get { return waypoints.Count(); }
         }
         #endregion
 
         #region Load/Update
-        public Nightmare(Vector2 position, Vector2 target, Texture2D texture, float scale, int nodeIndex, int health)
+        public Nightmare(Texture2D texture, Vector2 start, int health, int bounty, float speed, Queue<Vector2> waypoints)
+            : base(texture, start)
         {
-            Position = position;
-            ObjectTexture = texture;
-            Scale = scale;
-            NodeIndex = nodeIndex;
-            Health = health;
-            Origin = new Vector2(texture.Width / 2, texture.Height / 2);
-            hasReachedNode = false;
-            UpdateRotation(target);
+            isAlive = true;
+            currentHealth = health;
+            maxHealth = health;
+            this.bounty = bounty;
+            this.speed = speed;
+
+            this.waypoints = waypoints;
         }
 
-        public void Update(GameTime gameTime, Vector2 currentTarget)
+        public override void Draw(SpriteBatch spriteBatch)
         {
-            if (gameTime.TotalGameTime.TotalMilliseconds - lastMove > StandardMoveSpeed * moveSpeed)
+            base.Draw(spriteBatch);
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            // TODO: Enter code to move nightmare
+            if (position == waypoints.Peek())
             {
-                Position += Direction;
-                if (Position == currentTarget)
-                {
-                    hasReachedNode = true;
-                }
+                waypoints.Dequeue();
             }
+
+            if (waypoints.Count < 1)
+            {
+                isAlive = false;
+            }
+            else
+            {
+                UpdatePosition();
+            }
+            
+            if (currentHealth <= 0)
+            {
+                isAlive = false;
+            }
+
+            healthPercent = currentHealth / maxHealth * 100;
+
+            base.Update(gameTime);
         }
         #endregion
 
         #region Methods
         /// <summary>
-        /// Updates the nightmares direction and angle
-        /// </summary>
-        /// <param name="target"></param>
-        public void UpdateRotation(Vector2 target)
-        {
-            // Difference of x/y coordiantes between shot and target
-            float diffX, diffY;
-
-            diffX = target.X - Position.X;
-            diffY = target.Y - Position.Y;
-            Rotation = (float)Math.Atan2(diffY, diffX);
-
-            Forward = new Vector2(1, 0);
-            Matrix rotMatrix = Matrix.CreateRotationZ(Rotation);
-            Direction = Vector2.Transform(Forward, rotMatrix);
-        }
-
-        /// <summary>
         /// Deals damage and applies special effects
         /// </summary>
         /// <param name="pAbility">Ability used against nightmare</param>
-        /// <returns>True = Nightmare was killed    False = Nightmare still lives</returns>
-        public bool DealDamage(Ability pAbility)
+        public void DealDamage(Ability pAbility)
         {
-            health -= pAbility.AbilityPower;
+            currentHealth -= pAbility.AbilityPower;
 
-            if (health <= 0)
+            if (currentHealth <= 0)
             {
-                return true;
+                isAlive = false;
             }
+        }
 
-            return false;
+        /// <summary>
+        /// Updates the nightmares direction and angle
+        /// </summary>
+        /// <param name="target"></param>
+        private void UpdatePosition()
+        {
+            Vector2 target = waypoints.Peek();
+
+            // Difference of x/y coordiantes between shot and target
+            float diffX, diffY;
+
+            diffX = target.X - position.X;
+            diffY = target.Y - position.Y;
+            rotation = (float)Math.Atan2(diffY, diffX);
+
+            forward = new Vector2(1, 0);
+            Matrix rotMatrix = Matrix.CreateRotationZ(rotation);
+            direction = Vector2.Transform(forward, rotMatrix);
         }
         #endregion
     }

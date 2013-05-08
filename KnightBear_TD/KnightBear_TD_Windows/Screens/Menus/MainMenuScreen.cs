@@ -1,4 +1,10 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="MainMenuScreen.cs" company="Leim Productions">
+//     Copyright (c) Leim Productions Inc.  All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,15 +17,18 @@ namespace KnightBear_TD_Windows.Screens.Menus
             : base("Main Menu")
         {
             MenuItem playGameMenuItem = new MenuItem("Play Game");
+            MenuItem editorMenuItem = new MenuItem("Map Editor");
             MenuItem optionsMenuItem = new MenuItem("Options");
             MenuItem exitGameMenuItem = new MenuItem("Exit");
 
             // Hook up menu items to selection event
             playGameMenuItem.Selected += playGameMenuItem_Selected;
+            editorMenuItem.Selected += editorMenuItem_Selected;
             optionsMenuItem.Selected += optionsMenuItem_Selected;
             exitGameMenuItem.Selected += exitGameMenuItem_Selected;
 
             MenuItems.Add(playGameMenuItem);
+            MenuItems.Add(editorMenuItem);
             MenuItems.Add(optionsMenuItem);
             MenuItems.Add(exitGameMenuItem);
         }
@@ -30,6 +39,14 @@ namespace KnightBear_TD_Windows.Screens.Menus
         void playGameMenuItem_Selected(object sender, EventArgs e)
         {
             Manager.AddScreen(new PreLevelScreen());
+        }
+
+        /// <summary>
+        /// Method for handling when Map Editor is selected
+        /// </summary>
+        void editorMenuItem_Selected(object sender, EventArgs e)
+        {
+            Manager.AddScreen(new MapEditorConfigMenuScreen());
         }
 
         /// <summary>

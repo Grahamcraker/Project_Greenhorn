@@ -1,4 +1,10 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="MenuItem.cs" company="Leim Productions">
+//     Copyright (c) Leim Productions Inc.  All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +24,7 @@ namespace KnightBear_TD_Windows.Screens.Menus
         public string Text
         {
             get { return text; }
+            set { text = value; }
         }
 
         public Vector2 Position

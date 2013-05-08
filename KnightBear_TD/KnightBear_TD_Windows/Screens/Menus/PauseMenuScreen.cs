@@ -1,4 +1,10 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="PauseMenuScreen.cs" company="Leim Productions">
+//     Copyright (c) Leim Productions Inc.  All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,9 +21,8 @@ namespace KnightBear_TD_Windows.Screens.Menus
 
         #region Load
         public PauseMenuScreen()
-            : base("Paused")
+            : base("Pause Menu")
         {
-
             // Add Menu Items
             MenuItem resumeMenuItem = new MenuItem("Resume Game");
             MenuItem exitMenuItem = new MenuItem("Exit To Main Menu");
@@ -33,14 +38,16 @@ namespace KnightBear_TD_Windows.Screens.Menus
 
         public override void Activate()
         {
-            // Create background which will make the game seem faded out
+            // TODO: Create background which will make the game seem faded out
             /*GraphicsDevice device = Manager.GraphicsDevice;
             int width = Manager.GraphicsDevice.Viewport.Width;
             int height = Manager.GraphicsDevice.Viewport.Height;
             background = new Texture2D(device, width, height);
             background.SetData(new Color[] { Color.Black });*/
         }
+        #endregion
 
+        #region Events
         void resumeMenuItem_Selected(object sender, EventArgs e)
         {
             

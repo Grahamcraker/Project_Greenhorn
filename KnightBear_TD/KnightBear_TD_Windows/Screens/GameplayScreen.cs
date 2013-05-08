@@ -1,4 +1,10 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="GameplayScreen.cs" company="Leim Productions">
+//     Copyright (c) Leim Productions Inc.  All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +35,15 @@ namespace KnightBear_TD_Windows.Screens
         #endregion
 
         #region Properties
+        public int ScreenWidth
+        {
+            get { return screenWidth; }
+        }
+
+        public int ScreenHeight
+        {
+            get { return screenHeight; }
+        }
         #endregion
 
         #region Load
@@ -41,10 +56,13 @@ namespace KnightBear_TD_Windows.Screens
         {
             content = new ContentManager(Manager.Game.Services, Manager.Game.Content.RootDirectory);
 
-            screenWidth = Manager.Game.GraphicsDevice.Viewport.Width;
-            screenHeight = Manager.Game.GraphicsDevice.Viewport.Height;
+            screenWidth = config.Layout.GetLength(1) * 50;
+            screenHeight = config.Layout.GetLength(0) * 50;
 
-            level = new Level(content, config, screenWidth, screenHeight);
+            Manager.GraphicsDevice.PresentationParameters.BackBufferWidth = screenWidth;
+            Manager.GraphicsDevice.PresentationParameters.BackBufferHeight = screenHeight;
+
+            level = new Level(content, config);
 
             pauseAction = new InputAction(new Keys[] { Keys.P, Keys.Escape }, true);
             spawnNightmareAction = new InputAction(new Keys[] { Keys.N }, true);
@@ -54,7 +72,7 @@ namespace KnightBear_TD_Windows.Screens
         #region Update
         public override void Draw()
         {
-            level.Draw(Manager.SpriteBatch, screenWidth, screenHeight);
+            level.Draw(Manager.SpriteBatch);
         }
 
         public override void Update(GameTime gameTime, bool hasFocus, bool isCovered)
@@ -66,7 +84,7 @@ namespace KnightBear_TD_Windows.Screens
 
             if (IsActive)
             {
-                level.Update(gameTime, screenWidth, screenHeight);
+                level.Update(gameTime);
             }
         }
 

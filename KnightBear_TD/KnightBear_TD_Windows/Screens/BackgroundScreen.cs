@@ -1,4 +1,10 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="BackgroundScreen.cs" company="Leim Productions">
+//     Copyright (c) Leim Productions Inc.  All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,7 +36,7 @@ namespace KnightBear_TD_Windows.Screens
                 content = new ContentManager(Manager.Game.Services, Manager.Game.Content.RootDirectory);
             }
 
-            background = content.Load<Texture2D>("Images/Converted/backgroundImage");
+            background = content.Load<Texture2D>("Images/backgroundImage");
         }
 
         public override void Draw()
