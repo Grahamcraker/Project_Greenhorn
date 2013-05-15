@@ -45,6 +45,11 @@ namespace KnightBear_TD_Windows.Gameplay.Levels
             }
         }
 
+        Texture2D Texture
+        {
+            set { texture = value; }
+        }
+
         public Vector2 Center
         {
             get { return position + new Vector2(25, 25); }
@@ -67,6 +72,14 @@ namespace KnightBear_TD_Windows.Gameplay.Levels
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, position, null, Color.White, 0, new Vector2(0, 0), 1, SpriteEffects.None, 0);
+        }
+        #endregion
+
+        #region Methods
+        public void Cycle(NodeType type, Texture2D texture)
+        {
+            this.type = type;
+            this.texture = texture;
         }
         #endregion
     }

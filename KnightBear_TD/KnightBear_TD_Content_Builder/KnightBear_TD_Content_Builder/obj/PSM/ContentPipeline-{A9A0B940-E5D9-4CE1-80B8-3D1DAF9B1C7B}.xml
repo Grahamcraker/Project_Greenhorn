@@ -47,15 +47,6 @@
       <Time>2013-02-21T15:09:45.7693729-05:00</Time>
     </Item>
     <Item>
-      <Source>D:\Game Development\Project_Greenhorn\Content\Images\bgNightmarePath.png</Source>
-      <Name>Images\bgNightmarePath</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgNightmarePath.xnb</Output>
-      <Time>2013-03-21T18:48:39.1087362-04:00</Time>
-    </Item>
-    <Item>
       <Source>D:\Game Development\Project_Greenhorn\Content\Images\bgNonBuildable.png</Source>
       <Name>Images\bgNonBuildable</Name>
       <Importer>TextureImporter</Importer>
@@ -162,6 +153,33 @@
       <Options>None</Options>
       <Output>D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\player.xnb</Output>
       <Time>2013-03-24T13:56:51.3230972-04:00</Time>
+    </Item>
+    <Item>
+      <Source>D:\Game Development\Project_Greenhorn\Content\Images\bgPath.png</Source>
+      <Name>Images\bgPath</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgPath.xnb</Output>
+      <Time>2013-03-21T18:48:39.1087362-04:00</Time>
+    </Item>
+    <Item>
+      <Source>D:\Game Development\Project_Greenhorn\Content\Images\bgPathEnd.png</Source>
+      <Name>Images\bgPathEnd</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgPathEnd.xnb</Output>
+      <Time>2013-05-08T16:21:50.1243985-04:00</Time>
+    </Item>
+    <Item>
+      <Source>D:\Game Development\Project_Greenhorn\Content\Images\bgPathStart.png</Source>
+      <Name>Images\bgPathStart</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgPathStart.xnb</Output>
+      <Time>2013-05-08T16:22:18.2325183-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

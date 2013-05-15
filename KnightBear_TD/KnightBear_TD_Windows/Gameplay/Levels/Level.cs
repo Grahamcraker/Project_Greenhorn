@@ -191,7 +191,6 @@ namespace KnightBear_TD_Windows.Gameplay.Levels
             // Update projectiles
             foreach (Projectile p in projectiles)
             {
-                // TODO: Enter code to move projectiles
                 p.Update(gameTime);
             }
 
@@ -204,7 +203,7 @@ namespace KnightBear_TD_Windows.Gameplay.Levels
                 if (tw.CanAttack && CheckTarget(tw))
                 {
                     Vector2 startPosition = tw.Center;
-                    tw.PerformAttack(gameTime);
+                    tw.Attack(gameTime);
                     projectiles.Add(new Projectile(projectileTexture, startPosition, tw.Target, new Ability()));
                 }
             }
@@ -220,7 +219,7 @@ namespace KnightBear_TD_Windows.Gameplay.Levels
                 }
                 else
                 {
-                    nightmares.Remove(nm);
+                    DestroyNightmare(nm);
                 }
             }
 

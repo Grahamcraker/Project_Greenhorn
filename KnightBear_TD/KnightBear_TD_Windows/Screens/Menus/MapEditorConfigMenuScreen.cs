@@ -32,6 +32,7 @@ namespace KnightBear_TD_Windows.Screens.Menus
         {
             verticalNodeCount = 3;
             horizontalNodeCount = 3;
+
             // Configure Increase/Decrease count actions
             increaseCountAction = new InputAction(new Keys[] { Keys.Right }, true);
             decreaseCountAction = new InputAction(new Keys[] { Keys.Left }, true);

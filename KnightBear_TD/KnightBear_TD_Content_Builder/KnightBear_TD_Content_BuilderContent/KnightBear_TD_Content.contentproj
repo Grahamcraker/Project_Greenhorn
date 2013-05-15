@@ -86,12 +86,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="..\..\..\Content\Images\bgNightmarePath.png">
-      <Link>Images\bgNightmarePath.png</Link>
-      <Name>bgNightmarePath</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="..\..\..\Content\Images\bgNonBuildable.png">
       <Link>Images\bgNonBuildable.png</Link>
       <Name>bgNonBuildable</Name>
@@ -159,6 +153,28 @@
       <Name>menuFont</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Content\Images\bgPath.png">
+      <Link>Images\bgPath.png</Link>
+      <Name>bgPath</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Content\Images\bgPathEnd.png">
+      <Link>Images\bgPathEnd.png</Link>
+      <Name>bgPathEnd</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="..\..\..\Content\Images\bgPathStart.png">
+      <Link>Images\bgPathStart.png</Link>
+      <Name>bgPathStart</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

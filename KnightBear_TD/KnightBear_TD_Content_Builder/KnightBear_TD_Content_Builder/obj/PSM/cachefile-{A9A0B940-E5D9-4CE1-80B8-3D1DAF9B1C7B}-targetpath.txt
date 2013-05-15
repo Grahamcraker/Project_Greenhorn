@@ -3,7 +3,6 @@ Content\Images\backgroundImage.xnb
 Content\Images\basicTowerIcon.xnb
 Content\Images\bgBuildable.xnb
 Content\Images\bgLoad.xnb
-Content\Images\bgNightmarePath.xnb
 Content\Images\bgNonBuildable.xnb
 Content\Images\btn.xnb
 Content\Images\btnHover.xnb
@@ -16,3 +15,6 @@ Content\Fonts\buttonFont.xnb
 Content\Fonts\headerFont.xnb
 Content\Fonts\menuFont.xnb
 Content\Images\player.xnb
+Content\Images\bgPath.xnb
+Content\Images\bgPathEnd.xnb
+Content\Images\bgPathStart.xnb

@@ -12,6 +12,7 @@ namespace KnightBear_TD_Windows.Gameplay.Levels
         #region Fields
         private MapNode[,] nodeLayout;
         private List<Queue<Vector2>> waypoints;
+        private Dictionary<NodeType, Texture2D> textures;
         #endregion
 
         #region Properties
@@ -46,8 +47,13 @@ namespace KnightBear_TD_Windows.Gameplay.Levels
         public Map(int[,] layout, Dictionary<NodeType, Texture2D> nodeTextures, List<string[]> waypointList)
         {
             waypoints = new List<Queue<Vector2>>();
-            InitNodes(layout, nodeTextures);
-            InitWaypoints(waypointList);
+            this.textures = nodeTextures;
+            InitNodes(layout);
+
+            if (waypointList != null)
+            {
+                InitWaypoints(waypointList);
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -102,6 +108,11 @@ namespace KnightBear_TD_Windows.Gameplay.Levels
             return nodeLayout[x, y];
         }
 
+        public Texture2D GetTexture(NodeType type)
+        {
+            return textures[type];
+        }
+
         /// <summary>
         /// Returns a queue of all the waypoints used for nightmare travel.
         /// </summary>
@@ -122,7 +133,7 @@ namespace KnightBear_TD_Windows.Gameplay.Levels
         /// Populates the MapNode[,] layout with the given config.
         /// </summary>
         /// <param name="layout">The layout configuration for the level</param>
-        private void InitNodes(int[,] layout, Dictionary<NodeType, Texture2D> textures)
+        private void InitNodes(int[,] layout)
         {
             NodeType type;
             Vector2 position;
@@ -169,6 +180,17 @@ namespace KnightBear_TD_Windows.Gameplay.Levels
             }
         }
 
+        /// <summary>
+        /// Creates queues containing waypoints for each nightmare path.
+        /// </summary>
+        /// <param name="waypointList">List of nightmare paths</param>
+        /// <remarks>
+        /// This system is a little complex. This method will receive a list
+        /// of string arrays. Each array represents a path. Each string within an array
+        /// represents a single waypoint. Each waypoint must be changed from a location
+        /// within the nodeLayout([x, y]) to a Vector2 representing the actual waypoint
+        /// position.
+        /// </remarks>
         private void InitWaypoints(List<string[]> waypointList)
         {
             Queue<Vector2> waypointQueue;
@@ -184,6 +206,7 @@ namespace KnightBear_TD_Windows.Gameplay.Levels
                     int x = Convert.ToInt32(node[0]);
                     int y = Convert.ToInt32(node[1]);
 
+                    // Flip X/Y to get the correct node.
                     waypointQueue.Enqueue(nodeLayout[y, x].Center);
                 }
 

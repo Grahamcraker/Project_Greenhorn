@@ -71,7 +71,10 @@ namespace KnightBear_TD_Windows.Gameplay.Entities.Towers
         #endregion
 
         #region Methods
-        public void PerformAttack(GameTime gameTime)
+        /// <summary>
+        /// Sets the last shot time to now
+        /// </summary>
+        public void Attack(GameTime gameTime)
         {
             CanAttack = false;
             lastAttack = gameTime.TotalGameTime.TotalMilliseconds;

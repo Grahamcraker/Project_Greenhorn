@@ -42,11 +42,13 @@ namespace KnightBear_TD_Windows.Editor
             // Load the textures for the different node types
             textures.Add(NodeType.Buildable, content.Load<Texture2D>("images/bgBuildable"));
             textures.Add(NodeType.NonBuildable, content.Load<Texture2D>("images/bgNonBuildable"));
-            textures.Add(NodeType.Path, content.Load<Texture2D>("images/bgNightmarePath"));
+            textures.Add(NodeType.Path, content.Load<Texture2D>("images/bgPath"));
+            textures.Add(NodeType.PathEnd, content.Load<Texture2D>("images/bgPathEnd"));
+            textures.Add(NodeType.PathStart, content.Load<Texture2D>("images/bgPathStart"));
 
             int[,] layout = CreateLayout(vNodeCount, hNodeCount);
 
-            //map = new Map(layout, textures);
+            map = new Map(layout, textures, null);
         }
         #endregion
 
@@ -81,29 +83,32 @@ namespace KnightBear_TD_Windows.Editor
 
         public void CycleNode(Vector2 clickPosition)
         {
-            // TODO: Implement code to cycle the nodetype
-            //Rectangle mouseRec = new Rectangle((int)clickPosition.X, (int)clickPosition.Y, 1, 1);
+            MapNode node = map.CheckCollision(clickPosition);
+            NodeType type;
 
-            //foreach (MapNode node in mapNodes)
-            //{
-            //    if (mouseRec.Intersects(node.Bounds))
-            //    {
-            //        switch (node.Type)
-            //        {
-            //            case NodeType.NonBuildable:
-            //                node.Type = NodeType.Buildable;
-            //                break;
-            //            case NodeType.Buildable:
-            //                node.Type = NodeType.Path;
-            //                break;
-            //            case NodeType.Path:
-            //                node.Type = NodeType.NonBuildable;
-            //                break;
-            //        }
+            switch (node.Type)
+            {
+                case NodeType.NonBuildable:
+                    type = NodeType.Buildable;
+                    break;
+                case NodeType.Buildable:
+                    type = NodeType.Path;
+                    break;
+                case NodeType.Path:
+                    type = NodeType.PathStart;
+                    break;
+                case NodeType.PathStart:
+                    type = NodeType.PathEnd;
+                    break;
+                case NodeType.PathEnd:
+                    type = NodeType.NonBuildable;
+                    break;
+                default:
+                    type = NodeType.Buildable;
+                    break;
+            }
 
-            //        break;
-            //    }
-            //}
+            node.Cycle(type, map.GetTexture(type));
         }
         #endregion
     }

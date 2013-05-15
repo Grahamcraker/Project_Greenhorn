@@ -6,7 +6,6 @@ D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builde
 D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\basicTowerIcon.xnb
 D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgBuildable.xnb
 D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgLoad.xnb
-D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgNightmarePath.xnb
 D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgNonBuildable.xnb
 D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\btn.xnb
 D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\btnHover.xnb
@@ -20,3 +19,6 @@ D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builde
 D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Fonts\menuFont.xnb
 D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\obj\PSM\KnightBear_TD_Content_Builder.csprojResolveAssemblyReference.cache
 D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\player.xnb
+D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgPath.xnb
+D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgPathEnd.xnb
+D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgPathStart.xnb
