@@ -8,3 +8,13 @@ D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Windows\bin\Wi
 D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Windows\bin\WindowsGL\Debug\Tao.Sdl.dll
 D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Windows\obj\x86\Debug\KnightBear_TD_Windows.exe
 D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Windows\obj\x86\Debug\KnightBear_TD_Windows.pdb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Windows\obj\x86\Debug\KnightBear_TD_Windows.exe
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Windows\obj\x86\Debug\KnightBear_TD_Windows.pdb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Windows\bin\WindowsGL\Debug\SDL.dll
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Windows\bin\WindowsGL\Debug\KnightBear_TD_Windows.exe
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Windows\bin\WindowsGL\Debug\KnightBear_TD_Windows.pdb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Windows\bin\WindowsGL\Debug\Lidgren.Network.dll
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Windows\bin\WindowsGL\Debug\MonoGame.Framework.dll
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Windows\bin\WindowsGL\Debug\OpenTK.dll
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Windows\bin\WindowsGL\Debug\Tao.Sdl.dll
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Windows\obj\x86\Debug\KnightBear_TD_Windows.csprojResolveAssemblyReference.cache

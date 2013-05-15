@@ -30,6 +30,7 @@ namespace KnightBear_TD_Windows
         /// <summary>
         /// Main entry point for the game. Creates the screen manager and sets the screen size.
         /// </summary>
+        
         public KnightBearGame()
             : base()
         {

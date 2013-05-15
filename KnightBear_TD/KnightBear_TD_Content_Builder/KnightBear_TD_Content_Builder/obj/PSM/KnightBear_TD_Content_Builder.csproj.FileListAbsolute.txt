@@ -22,3 +22,27 @@ D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builde
 D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgPath.xnb
 D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgPathEnd.xnb
 D:\Game Development\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgPathStart.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\player.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\aoeTowerIcon.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\backgroundImage.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\basicTowerIcon.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgBuildable.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgLoad.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgNonBuildable.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\btn.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\btnHover.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\laser.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\lime.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\lvl1Background.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\lvl2Background.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\slowTowerIcon.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgPath.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgPathEnd.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Images\bgPathStart.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Fonts\buttonFont.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Fonts\headerFont.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\Content\Fonts\menuFont.xnb
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\bin\PSM\IgnoreMe.dll
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\obj\PSM\KnightBear_TD_Content_Builder.csprojResolveAssemblyReference.cache
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\obj\PSM\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\AIUUC93\Documents\Project_Greenhorn\KnightBear_TD\KnightBear_TD_Content_Builder\KnightBear_TD_Content_Builder\obj\PSM\IgnoreMe.dll

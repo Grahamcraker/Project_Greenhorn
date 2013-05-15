@@ -16,10 +16,10 @@ namespace KnightBear_TD_Windows.Gameplay.Levels
     public class MapNode
     {
         #region Fields
-        Texture2D texture;
-        NodeType type;
-        MapNode[] neighbors;
-        Vector2 position;
+        private Texture2D texture;
+        private NodeType type;
+        private Vector2 position;
+        public MapNode[] neighbors;
         #endregion
 
         #region Properties

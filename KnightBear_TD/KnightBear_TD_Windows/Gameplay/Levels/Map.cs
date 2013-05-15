@@ -135,14 +135,19 @@ namespace KnightBear_TD_Windows.Gameplay.Levels
         /// <param name="layout">The layout configuration for the level</param>
         private void InitNodes(int[,] layout)
         {
+            Point[] neighborIndexes;
+            MapNode node;
             NodeType type;
-            Vector2 position;
             Texture2D texture;
-            nodeLayout = new MapNode[layout.GetLength(0), layout.GetLength(1)];
+            Vector2 position;
+            int width = layout.GetLength(1);
+            int height = layout.GetLength(0);
+            
+            nodeLayout = new MapNode[height,width];
 
-            for (int x = 0; x < layout.GetLength(1); x++)
+            for (int x = 0; x < width; x++)
             {
-                for (int y = 0; y < layout.GetLength(0); y++)
+                for (int y = 0; y < height; y++)
                 {
                     switch (layout[x, y])
                     {
@@ -176,6 +181,37 @@ namespace KnightBear_TD_Windows.Gameplay.Levels
                     Console.WriteLine(position);
 
                     nodeLayout[x, y] = new MapNode(texture, position, type);
+                }
+            }
+
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
+                {
+                    node = nodeLayout[x, y];
+
+                    neighborIndexes = new Point[]
+                    {
+                        new Point(x, y - 1),
+                        new Point(x + 1, y),
+                        new Point(x, y + 1),
+                        new Point(x - 1, y)
+                    };
+
+                    // References neighboring nodes in the following order:
+                    // Top, Right, Down, Left
+                    for (int i = 0; i < neighborIndexes.Length; i++)
+                    {
+                        Point neighbor = neighborIndexes[i];
+
+                        if (neighbor.X < 0 || neighbor.X > width - 1 ||
+                            neighbor.Y < 0 || neighbor.Y > height - 1)
+                        {
+                            continue;
+                        }
+
+                        node.neighbors[i] = nodeLayout[x, y];
+                    }
                 }
             }
         }

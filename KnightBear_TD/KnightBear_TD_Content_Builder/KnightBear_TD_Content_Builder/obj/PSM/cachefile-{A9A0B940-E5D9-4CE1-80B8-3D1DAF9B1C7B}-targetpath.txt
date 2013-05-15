@@ -1,3 +1,4 @@
+Content\Images\player.xnb
 Content\Images\aoeTowerIcon.xnb
 Content\Images\backgroundImage.xnb
 Content\Images\basicTowerIcon.xnb
@@ -11,10 +12,9 @@ Content\Images\lime.xnb
 Content\Images\lvl1Background.xnb
 Content\Images\lvl2Background.xnb
 Content\Images\slowTowerIcon.xnb
-Content\Fonts\buttonFont.xnb
-Content\Fonts\headerFont.xnb
-Content\Fonts\menuFont.xnb
-Content\Images\player.xnb
 Content\Images\bgPath.xnb
 Content\Images\bgPathEnd.xnb
 Content\Images\bgPathStart.xnb
+Content\Fonts\buttonFont.xnb
+Content\Fonts\headerFont.xnb
+Content\Fonts\menuFont.xnb
